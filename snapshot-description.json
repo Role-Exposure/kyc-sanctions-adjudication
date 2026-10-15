@@ -1,0 +1,17 @@
+{
+  "descriptionVersion": 1,
+  "provider": "OpenSanctions",
+  "scope": "us_ofac_sdn",
+  "exportVersion": "20260909221001-juh",
+  "exportDate": "2026-09-09T22:10:01",
+  "lastChange": "2026-09-09T14:10:01",
+  "exportFile": "entities.ftm.json",
+  "exportFormat": "application/json+ftm",
+  "exportSize": 52971173,
+  "exportSha256": "81bc254601ee9c0685ad7f8cccdf8a83169464cb4eec957a47280a6854428bda",
+  "exportSha1Provider": "dd9967d88d4ad14973d32bc51ff8941c7b56d3a3",
+  "indexJsonSha256": "831b32e5c6878f04a7c248032fba1c413ce8b502cebd6546aa29b9271ca78de5",
+  "entityCount": 72236,
+  "targetCount": 20324,
+  "downloadedAt": "2026-09-27T18:47:04Z"
+}
