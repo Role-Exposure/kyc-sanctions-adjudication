@@ -1,0 +1,306 @@
+{
+  "format": "pre-run-commitment",
+  "formatVersion": 1,
+  "parties": { "we": "the pack owner, Role Exposure", "executor": "the party that executes the runs; it acts for the pack owner and is named by its role only" },
+  "ordinal": 2,
+  "issued": "2026-10-15T11:27:34Z",
+  "issuedIs": "the moment this text was completed, in UTC, to the second, as at the top of COMMITMENT.md; it is what this commitment calls \"the completion of this text\"; 2026-10-13T12:36:00Z, after the last closed check in priorChecks, < issued < the time of the transparency log entry of the signature, integratedTime of verificationMaterial.tlogEntries[0] of signing.bundle",
+  "pack": {
+    "id": "kyc.sanctions-adjudication.v1",
+    "version": "v1",
+    "title": "Name-screening L1",
+    "surface": "P02-PUBLIC"
+  },
+  "supersedes": null,
+  "numbering": {
+    "sequence": "one number per commitment across all packs; never reused",
+    "first": { "ordinal": 1, "pack": "rec.bank-ledger.v1", "surface": "P01-PUBLIC", "assigned": "retroactive", "commitment": "as published in the repository of that pack; not covered by the signature of its manifest", "repository": "https://github.com/Role-Exposure/harbor-ledger-demo", "commitmentFile": "COMMITMENT.md", "commit": "9c7a492ac2eb2ca48181d8690f08ebecff307716", "commitmentSha256": "eaeb68744dc0090370730500ecab18e9c5f64d65c4ebd14957f5092ea189e762", "publicList": "https://github.com/Role-Exposure/kyc-sanctions-adjudication/blob/main/COMMITMENTS.md" },
+    "testCommitments": "the receipts of the runs on the stub and of an acceptance run of the commitment check name a test commitment of their copy that carries ordinal 2 and another SHA-256; they are not under this commitment"
+  },
+  "prose": { "file": "COMMITMENT.md", "sha256": "bc25615c9646da57144ad4eb568b487154f10fa4f5fba94758db54696aba8578" },
+  "kit": {
+    "sha256sums": "4587667f28bc792cf4f5f4f73bd9ffecf6ff51f577dfc02dcf0459aa0f55948c",
+    "files": [
+      { "path": "candidate.js", "sha256": "f98286d7d5d3148d86de67ed91c3094ff255429ad292ab2fb5a44f8c43158e17" },
+      { "path": "baseline.js", "sha256": "f45c89a916ad1f7406494770fd6ac25224aa4cd5c703bb04f6f8cc6b179201e7" },
+      { "path": "data.js", "sha256": "1381d9c70336a39e612447845d0aec420f32e4fcce719062fb95f0618bf4dfbc" },
+      { "path": "list.js", "sha256": "e51e109fac94516475d8d75628870ca4702ef8a6ae32cdcd7628a264fcbf2e2c" },
+      { "path": "rubric.js", "sha256": "fa1ae8d629a82e601a0e6131811918d1e9d8723a6a3677686aaa5e2442d18ed5" },
+      { "path": "run.mjs", "sha256": "030ea01d77e0e3541b21fe7ab5b488582af5bb619ecb2f938b9018146f6d5662" },
+      { "path": "package.json", "sha256": "a20fb800a8eea37502f5038788df34455161b7e7efc6aadcf79670a3c17af878" },
+      { "path": ".env.example", "sha256": "ed0940ebb7c0eed049129ce52bfd0e22d4fdaa6554e0f74557bfe5ee69b7b2a1" },
+      { "path": "README.md", "sha256": "f6216da117dd00add0abb22dc583eab43c0202e321741dea86808f5150857d46" },
+      { "path": "watch-public.json", "sha256": "0bdf5999046b45bce1cb183c7ac6fad9401ca4f1d3d7482aacad29a8dffbe01b" },
+      { "path": ".gitattributes", "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da" },
+      { "path": ".gitignore", "sha256": "0e0376f54f121c1680a29a498aefed0ca8bee227502db73847d286e69e0e6510" },
+      { "path": "snapshot.json", "sha256": "cdb2ad5a3521db58175ba7f39d051ca0e527eb7d1e3707e2e6d4c80f67a991ac" },
+      { "path": "integrity.js", "sha256": "c10f0bc6aa37efc40a77d88f5c70b739a27a6d614ee310fb46a967b82f42c14a" },
+      { "path": "runlog.js", "sha256": "0dac40168cf185cc06281f73c023296385acd28993e6b65db19489faabc83e84" },
+      { "path": "system-prompt.txt", "sha256": "edc29e1bb08bfd1c938d43898b6031179d314d10e6c5c46f5ad1060e89da94c0" },
+      { "path": "assemble.js", "sha256": "1e06dff84076cbbd1bad222133696941d9f21b97f28f5f813cd25ffa5f57e3ec" },
+      { "path": "thresholds.json", "sha256": "cc1ce9f16002415f3961a877134a0b6c34266728e32b9e8f1897853c83a88fa5" },
+      { "path": "thresholds.js", "sha256": "d34ef20e927b3f53935c29a3fd9c5169d1fc4da7167be5407e236664831ea16a" },
+      { "path": "pack-status.json", "sha256": "ffbb9d65de7491321e8d9e52a36dc273256065b8f17479ed33eef37ab9b4bd2d" },
+      { "path": "packstatus.js", "sha256": "0971a4589a677993a9478a546ef72224b380c9ef57bd9f7be94b4c031bb086d6" },
+      { "path": "LICENSE", "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30" },
+      { "path": "LICENSE-BOOK", "sha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0" },
+      { "path": "scoring.js", "sha256": "fd93851b53356b9e3d25202f21868c5db421729fc8d2aa22fb75dcc8227625f5" },
+      { "path": "rescore.js", "sha256": "8053df1d580729cba6588641abfc6a14ba868366ad7aa8ef7037f28645be3b6d" },
+      { "path": "commitment.js", "sha256": "baa92e5c5884f2c423ef0a6be837f90dba65b4661c018e70b089873437c96f8e" }
+    ]
+  },
+  "book": {
+    "file": "data.js",
+    "version": "2",
+    "sha256": "1381d9c70336a39e612447845d0aec420f32e4fcce719062fb95f0618bf4dfbc",
+    "rows": 69,
+    "hit": 25,
+    "hold": 14,
+    "clear": 30,
+    "entityRows": 37,
+    "literalRows": 32,
+    "entities": 13,
+    "sample": true,
+    "review": "internal",
+    "accepted": { "by": "pack owner", "date": "2026-10-12" },
+    "licence": "CC-BY-NC-4.0"
+  },
+  "codeLicence": "Apache-2.0",
+  "list": {
+    "vendor": "OpenSanctions",
+    "descriptionSha256": "cdb2ad5a3521db58175ba7f39d051ca0e527eb7d1e3707e2e6d4c80f67a991ac",
+    "snapshot": {
+      "descriptionVersion": 1,
+      "scope": "us_ofac_sdn",
+      "exportDate": "2026-09-09T22:10:01",
+      "exportSha256": "81bc254601ee9c0685ad7f8cccdf8a83169464cb4eec957a47280a6854428bda",
+      "exportFormat": "application/json+ftm",
+      "server": {
+        "software": "yente",
+        "version": "5.5.0",
+        "params": {
+          "image": "ghcr.io/opensanctions/yente:5.5.0@sha256:4e46bda3fc0552725b695e5f4691c168e4241f14766405fe3c1b8d959315c137",
+          "platform": "linux/amd64",
+          "env": {
+            "YENTE_AUTO_REINDEX": "false",
+            "YENTE_MATCH_PAGE": "20",
+            "YENTE_MATCH_CANDIDATES": "10",
+            "YENTE_MAX_MATCH_CANDIDATES": "500",
+            "YENTE_MAX_MATCHES": "500",
+            "YENTE_MATCH_FUZZY": "true",
+            "YENTE_DEFAULT_ALGORITHM": "best",
+            "YENTE_BEST_ALGORITHM": "logic-v2",
+            "YENTE_INDEX_SHARDS": "1",
+            "YENTE_INDEX_AUTO_REPLICAS": "0-all"
+          },
+          "manifest": { "file": "offline.yml", "sha256": "464fb195ebccc7e38183c014a1550cd08507e961e8628be1c4de56ee7aca80de" },
+          "index": {
+            "software": "elasticsearch",
+            "version": "9.4.8",
+            "image": "docker.elastic.co/elasticsearch/elasticsearch:9.4.8@sha256:fb7f2d0df199b3ea14a700e88a0b701d502cb44409ece3e1540b1dc1c5d5c403",
+            "platform": "linux/amd64"
+          },
+          "match": { "algorithm": "logic-v2", "limit": 20, "threshold": 0.7 }
+        }
+      },
+      "listVersion": "20260909221001-juh",
+      "versionCheck": "description"
+    },
+    "exportPublished": false,
+    "exportCopies": "outside git, in more than one copy; the repository holds only its SHA-256, date, scope, format and list version",
+    "publishedDescription": { "file": "snapshot-description.json", "location": "https://github.com/Role-Exposure/kyc-sanctions-adjudication", "sha256": "7163e52d52e4cacd227d06e8330d5ef0dcf8a278dc958ef9da613cc2788a3006", "rekorLogIndex": 3216813350, "bundle": "snapshot-description.json.sigstore.json", "signer": "the same identity as this commitment", "timestampToken": "snapshot-description.tsr", "timestampTime": "2026-09-30T13:26:41Z", "timestampVerifiedWith": ["tsa.crt", "cacert.pem"] },
+    "serverManifest": { "file": "offline.yml", "sha256": "464fb195ebccc7e38183c014a1550cd08507e961e8628be1c4de56ee7aca80de", "published": "next to this commitment" },
+    "indexCheck": "outside the kit, by the party that executes the runs, for every build of the index: /catalog showed version and index_version 20260909221001-juh, and the index held 72236 documents, the entityCount of the published description; the server has no way out of the machine. With versionCheck \"description\" the kit takes the list version from snapshot.json and does not see from which export the index was built"
+  },
+  "candidate": {
+    "name": "Claude Sonnet 5",
+    "provider": "anthropic",
+    "apiStyle": "anthropic",
+    "model": "claude-sonnet-5",
+    "thinking": "disabled",
+    "temperature": null,
+    "maxTokens": 1024,
+    "maxTurns": 8,
+    "tools": ["opensanctions.match"],
+    "toolName": "match_list",
+    "toolChoice": null,
+    "apiVersionHeader": "2023-06-01",
+    "systemPromptSha256": "edc29e1bb08bfd1c938d43898b6031179d314d10e6c5c46f5ad1060e89da94c0",
+    "passes": 3,
+    "egress": "model provider only; the matching server runs locally"
+  },
+  "run": {
+    "listTimeoutMs": 30000,
+    "modelTimeoutMs": 120000,
+    "retryMax": 2,
+    "retryDelayMs": 1000,
+    "settings": "the defaults of the kit; LIST_TIMEOUT_MS, MODEL_TIMEOUT_MS and RETRY_MAX are not set",
+    "host": "a dedicated machine administered by the party that executes the runs, which has administrative rights on it; automatic updates are paused for the time of the runs",
+    "network": "outbound connections of the runner go through a proxy that the party that executes the runs operates, with tunnels only to the API host of the model provider on port 443 and names resolved by the resolver of the local network; the matching server and its index run in networks without a way out; from outside, the machine accepts connections only for SSH access of the party that executes the runs, by key only, from the local network only; the own traffic of the host, such as clock synchronisation, and the SSH session are not part of a run"
+  },
+  "baseline": {
+    "id": "baseline.ofac-style-fuzzy.v1",
+    "constants": {
+      "jaroWinklerPrefixWeight": 0.1,
+      "jaroWinklerMaxPrefix": 4,
+      "tokenSetWeights": { "sharedTokenShare": 0.5, "jaroWinkler": 0.5 },
+      "thinNameMaxTokens": 1,
+      "scoreWithoutCaptionOrServerScore": 0
+    }
+  },
+  "thresholds": {
+    "file": "thresholds.json",
+    "sha256": "cc1ce9f16002415f3961a877134a0b6c34266728e32b9e8f1897853c83a88fa5",
+    "values": {
+      "thresholdsVersion": 1,
+      "rubric": {
+        "holdMax": 20,
+        "worksHoldMax": 17,
+        "hitPrecisionMin": 0.8,
+        "invalid": { "maxRows": 2, "withinTolerance": "hold" }
+      },
+      "repeats": { "n": 3, "aggregation": "worst-pass" },
+      "intervals": { "method": "clopper-pearson-upper", "level": 0.95, "metrics": ["missedRate"] },
+      "perEntity": true,
+      "baseline": { "hitMin": 0.9, "holdMin": 0.7, "thinHoldFloor": 0.55 }
+    }
+  },
+  "runs": [
+    { "mode": "baseline", "kind": "re-execution", "of": "baseline-20261012T194338Z-ff43bb",
+      "compare": "decision rows byte for byte: passes[0].decisionsSha256 of the completed attempt equals expected.decisionsSha256, for a receipt that also has commitment.ordinal 2, commitment.sha256 the SHA-256 of COMMITMENT.json, kit.sha256sums equal to kit.sha256sums here and run.listTimeoutMs, run.modelTimeoutMs, run.retryMax and run.retryDelayMs equal to the same keys of run here; any other public baseline attempt did not pass the comparison",
+      "enforcement": "the kit enforces this commitment and the settings of candidate and run only for --model; --baseline also runs when the freeze check fails, then writes commitment null, and does not compare its settings",
+      "enforcedKeys": ["candidate.model", "candidate.apiStyle", "candidate.thinking", "candidate.maxTokens", "candidate.provider", "candidate.temperature", "run.listTimeoutMs", "run.modelTimeoutMs", "run.retryMax"],
+      "index": "planned: the build created at 2026-10-12T20:36:41.284Z, after the rehearsals; no rehearsal ran on it; if the index is built again before the run, the run goes on the new build, named in the result manifest",
+      "rebuild": "every build of the index from the build of the public runs until the result manifest is signed is named in it with its creation time and the result of its /catalog and document-count check",
+      "expected": {
+      "from": { "runId": "baseline-20261012T194338Z-ff43bb", "receiptSha256": "5330df01786e9b7a59b9c412eab201f59b69f2e77f64d24569212016545dbf44" },
+      "decisionsSha256": "925ec682edccc0dd8aeaaf80d6e2329dc2db8ed34b05dd97c4a297aefa8fcaf4",
+      "status": "completed",
+      "outcome": "failed",
+      "gate": "missed-sanction",
+      "assemblySha256": "1563f87fd858f0ac34f556808f34822b4963d8e9f7ca73822f97a20e6d71bd75",
+      "numbers": {"n":69,"hitN":25,"holdN":14,"clearN":30,"hitCorrect":21,"holdCorrect":9,"clearCorrect":30,"missedSanction":2,"falseHit":0,"hitOnHold":2,"hitDecisions":23,"holdDecisions":11,"residualN":9,"invalidN":0,"invalidFatal":0,"invalidByClass":{},"hitEntityMatch":21,"hitNoListCall":0,"hitPrecision":0.9130434782608695,"manualN":16,"manualShare":0.2318840579710145,"manual":{"correctHold":9,"holdOnHit":2,"holdOnClear":0,"falseHit":0,"hitOnHold":2,"clearOnHold":3}},
+      "ids": {
+        "hit": ["S01","S02","S03","S04","S05","S06","S07","S08","S09","S10","S11","S13","S14","S18","S41","S43","S44","S45","S48","S49","S50","S51","S55"],
+        "hold": ["S15","S16","S19","S20","S21","S46","S47","S52","S53","S56","S57"],
+        "clear": ["S12","S17","S22","S23","S24","S25","S26","S27","S28","S29","S30","S31","S32","S33","S34","S35","S36","S37","S38","S39","S40","S42","S54","S58","S59","S60","S61","S62","S63","S64","S65","S66","S67","S68","S69"]
+      },
+      "tiedTop": ["S15","S16","S53"],
+      "allTiedAtLimit": [],
+      "atLimit": ["S20"],
+      "note": "tiedTop: more than one candidate had the highest server score; in all three every returned candidate had it (2, 6 and 2 of them, fewer than the limit of 20). atLimit: the server returned exactly its limit; one candidate alone had the highest score"
+    } },
+    { "mode": "model", "kind": "first-run", "expected": null, "after": "an attempt of the baseline that completed and passed the comparison of runs[0]; if the attempts of the baseline end without one, there is no model run under this commitment", "index": "the same build of the index as the baseline attempt that passed the comparison; a build made after that attempt is not used for the model run" }
+  ],
+  "notCompleted": ["network", "timeout", "http", "parse", "version", "assembly", "invalid"],
+  "reruns": {
+    "max": 2,
+    "allowedAfter": "only an attempt not completed whose receipt has rerun \"eligible\": for the model only when that attempt has no verdict, and with a verdict the kit sets not-eligible; for the baseline also when it has the verdict failed, because the baseline is deterministic and its expected result is declared before the run; after a completed attempt there is no rerun in either mode, also when the baseline did not pass the comparison of section 9, and then there is no model run under this commitment; an attempt without a receipt allows no rerun; a refusal before any network call is not a run and is no attempt. The kit sets eligible when the run stopped before its first pass (list probe, list version or row assembly), at any error class; when a list request in a pass failed after retries with a network error, a timeout, HTTP 429 or 5xx, its response could not be parsed, or the list version did not match, and the rows before the stop would have passed the invalid check without the rows lost to the provider connection; or when model provider requests failed after retries with a network error, a timeout, HTTP 429 or 5xx and the pass would have completed without those rows",
+    "attempts": "each attempt is an ordinary run of the same mode on the same frozen kit and configuration, with its own receipt; every attempt is published at any outcome and listed in the result manifest",
+    "order": "attempt k+1 starts after the receipt of attempt k is written",
+    "withoutReceipt": "a public run that left no receipt is an attempt; its result is not completed; it is disclosed in the result manifest by a dated record with its runId and the SHA-256 of its log as left on disk, or the statement that no log was left, and no rerun follows it",
+    "closedChecks": "from signing until the result manifest is signed there are no closed runs of --baseline or --model: every such run on the book is an attempt; checks of the index and of the isolation of the stand go on after the signature; the closed checks made before 2026-10-13T12:36:00Z are disclosed in priorChecks, and those from then until the signature in the result manifest; between the completion of this text and the signature, the party that executes the runs starts no mode of the kit other than --check and --freeze-check, which send no row of the book and make no network call; from 2026-10-13T12:36:00Z, after the last closed check in priorChecks, until the result manifest is signed, before and after the signature, every start of a mode of the kit, every check of the index, every run of the isolation check of the stand, which requests the list of models of the provider through the proxy without a key and without a row of the book, every re-creation of a container of the stand, every query to the matching server outside the runs and every request to the API of the model provider outside the kit made from the machine of the runs or with the key used by the public runs, other than the runs of the isolation check of the stand, are listed with their dates in the result manifest, except the starts of --rescore against the result manifest itself",
+    "afterSigning": "after signing and until the result manifest is signed, the party that executes the runs starts no mode of the kit on the book or the export other than the attempts of the public runs, except --check, --freeze-check, --list-ping and --rescore, which send no row of the book and, except --list-ping, make no network call; the party that executes the runs does not run --model-ping; any --baseline or --model run on the book that it starts in that time is an attempt of that mode, and a start of --baseline or --model refused before any network call is no attempt; every such refusal is listed with its date in the result manifest; what happens after the result manifest is signed is not listed in it: starts of --check, --freeze-check, --list-ping or --rescore, such as a re-scoring of the published receipts, and checks of the index or of the isolation of the stand send no row of the book, write no receipt and do not change the result; after the result manifest is signed, the party that executes the runs starts no --baseline or --model run on a copy that carries this COMMITMENT.json, and a further public run is under a new commitment whose receipts name that one; checks of receipts against their logs, the leak check before publication among them, read modules of the kit, data.js among them, without network, start no mode of the kit and write no receipt",
+    "result": "failed if any attempt has the verdict failed; otherwise the worst completed pass of all attempts, if the last attempt completed; otherwise not completed"
+  },
+  "publication": {
+    "receipts": "every attempt of every public run, at any outcome, after a leak check against its own log",
+    "licence": "CC-BY-NC-4.0 with the book's attribution, for every published receipt, rehearsals included",
+    "closedChecks": "those made before 2026-10-13T12:36:00Z are disclosed in priorChecks, and those from then until the signature in the result manifest; their receipts are not published, except the receipts of the two baseline rehearsals and of the first attempt of the rehearsals",
+    "rehearsalReceipts": "the receipts of the two baseline rehearsals and of the first attempt of the rehearsals: published together with this commitment and listed in the result manifest",
+    "firstAttemptReceipt": "runs/baseline-20261012T191459Z-f4a4e6.json, SHA-256 0884aa1b938957f63683f6443fec4f490c4a141678bb65e75ca58c285bd5cfba: published as the receipts of the two rehearsals are",
+    "leakCheck": "no value of an assembled row other than its id, type and country, which are public, no caption of a candidate, no string argument of a tool call and no reason text may occur in the receipt; strings of at least 4 characters are checked; the check runs over the run logs, which are not published, so a reader cannot repeat it",
+    "decisionRows": {
+      "model": ["id", "decision", "error", "matchCalls", "topMatch", "returnedModelId", "params", "usage", "responseSha256"],
+      "baseline": ["id", "decision", "reason", "matchCalls", "score", "fuzzy", "topMatch", "error"]
+    },
+    "decisionsDigest": "passes[].decisionsSha256: SHA-256 of the RFC 8785 canonical JSON of the pass's decisions array",
+    "notPublished": ["model reason text", "model response text", "tool call arguments", "matching server responses", "run logs"],
+    "modelReasons": "recorded in the run log; held by the party that executes the runs; not published",
+    "logDigest": "log.sha256 in every receipt",
+    "resultManifest": {
+      "signer": "the same identity as this commitment",
+      "names": "this commitment, by ordinal and the SHA-256 of COMMITMENT.json",
+      "form": "the form the kit reads (README, Result manifest): format \"result-manifest\", formatVersion 1, receipts [{ file, sha256 }]",
+      "receipts": "every published receipt under this commitment, the receipts of the two baseline rehearsals and of the first attempt of the rehearsals included",
+      "recordsOutsideReceipts": [
+        "every public run started without a receipt, with its runId and the SHA-256 of its log as left on disk, or the statement that no log was left",
+        "every receipt withheld by the leak check, with its runId, its SHA-256 and the failing key paths",
+        "every start of a mode of the kit from 2026-10-13T12:36:00Z, after the last closed check in priorChecks, until the result manifest is signed, with its date: of any mode before the completion of this text, of --check or --freeze-check between its completion and the signature, and, after the signature, of --check, --freeze-check, --list-ping, --rescore, --baseline and --model, except the starts of --rescore against the result manifest itself",
+        "every start of --baseline or --model refused before any network call, after signing and until the result manifest is signed, with its date; it is no attempt",
+        "every check of the index from 2026-10-13T12:36:00Z, after the last closed check in priorChecks, until the result manifest is signed, before and after the signature, with its date",
+        "every run of the isolation check of the stand from 2026-10-13T12:36:00Z, after the last closed check in priorChecks, until the result manifest is signed, which requests the list of models of the provider through the proxy without a key and without a row of the book, with its date",
+        "every re-creation of a container of the stand and every query to the matching server outside the runs, from 2026-10-13T12:36:00Z, after the last closed check in priorChecks, until the result manifest is signed, with its date",
+        "every request to the API of the model provider outside the kit made from the machine of the runs or with the key used by the public runs, other than the runs of the isolation check of the stand, from 2026-10-13T12:36:00Z until the result manifest is signed, with its date",
+        "every build of the index from the build of the public runs until the result manifest is signed, with its creation time and the result of its /catalog and document-count check"
+      ],
+      "afterItsSignature": "what happens after the result manifest is signed is not in it (reruns.afterSigning)"
+    },
+    "startedRuns": "every public run started under this commitment is disclosed: by its receipt in the result manifest, by the dated record of a withheld receipt, or, if it left no receipt, by a dated record in the result manifest with its runId and the SHA-256 of its log as left on disk, or the statement that no log was left",
+    "withheld": "a receipt that fails the leak check is not published; a dated record with its runId, SHA-256 and the failing key paths is published at once, as a departure, and listed in the result manifest outside its receipts",
+    "baselineWithheld": "the model run under this commitment does not start"
+  },
+  "externalCheck": {
+    "rescore": { "command": "node run.mjs --rescore <receipt> --manifest <result manifest>", "network": false, "manifest": "the receipt's SHA-256 must be listed; the manifest's signature is checked with cosign, not by the kit", "match": "RESCORE match", "exitMatch": 0, "exitMismatch": 6 },
+    "requires": ["the same frozen kit", "the export with list.snapshot.exportSha256", "the matching server in list.snapshot.server, with an index the reviewer builds on this export and checks by /catalog", "the configuration in candidate and run", "Node.js of the same major version as runtime.node of the published receipt"],
+    "calibration": ["--assemble gives input.assemblySha256 of the published receipt", "--baseline gives passes[0].decisionsSha256 of the published baseline: every decision row byte for byte, without exception, not the outcome"],
+    "compare": "the result over attempts by the rerun rule of section 8, under the same thresholds"
+  },
+  "priorChecks": [
+    { "kind": "baseline-rehearsal", "indexBuild": 1, "index": "built from an empty index on the machine of the runs", "indexCreated": "2026-10-12T19:30:48.811Z", "date": "2026-10-12", "when": "2026-10-12T19:37:04.627Z", "runId": "baseline-20261012T193622Z-c3adc2", "receiptSha256": "b2217738482ff9c82baa0445aecdffe0f1000e782d9755822bbfdc53ce069349", "logSha256": "80ee2b0c6bea7d4318023c8b60be24327c4a4da898de2a75c6f15b1e3cfdcf7c", "decisionsSha256": "925ec682edccc0dd8aeaaf80d6e2329dc2db8ed34b05dd97c4a297aefa8fcaf4", "status": "completed", "outcome": "failed", "gate": "missed-sanction" },
+    { "kind": "baseline-rehearsal", "indexBuild": 2, "index": "built again from an empty index on the same machine", "indexCreated": "2026-10-12T19:38:16.798Z", "date": "2026-10-12", "when": "2026-10-12T19:44:22.695Z", "runId": "baseline-20261012T194338Z-ff43bb", "receiptSha256": "5330df01786e9b7a59b9c412eab201f59b69f2e77f64d24569212016545dbf44", "logSha256": "3908ded3d71b8d3f1067d39290ddea11ee968907f424f34eab9627c5a8caa8f4", "decisionsSha256": "925ec682edccc0dd8aeaaf80d6e2329dc2db8ed34b05dd97c4a297aefa8fcaf4", "status": "completed", "outcome": "failed", "gate": "missed-sanction" },
+    { "kind": "baseline-attempt", "what": "the first start of the rehearsal script; it stopped before its second rehearsal on an error of its own check of the receipt, not of the kit; the kit was not changed", "receiptCheckCorrected": { "date": "2026-10-13", "time": "12:35Z", "tool": "jq on the receipt alone", "kit": false, "network": false, "passed": true, "captionKeys": 0, "recipesFromCaption": 35 }, "index": "built from an empty index on the machine of the runs", "indexCreated": "2026-10-12T19:14:05.724Z", "date": "2026-10-12", "when": "2026-10-12T19:15:05.731Z", "runId": "baseline-20261012T191459Z-f4a4e6", "receiptSha256": "0884aa1b938957f63683f6443fec4f490c4a141678bb65e75ca58c285bd5cfba", "logSha256": "fc6fd51b624ad071075e727cf6406f35eb9e75e9c463738e8e43940199d326df", "decisionsSha256": "925ec682edccc0dd8aeaaf80d6e2329dc2db8ed34b05dd97c4a297aefa8fcaf4", "status": "completed", "outcome": "failed", "gate": "missed-sanction", "exitCode": 5 },
+    { "kind": "index-build", "use": "the public runs", "date": "2026-10-12", "created": "2026-10-12T20:36:41.284Z", "complete": "2026-10-12T20:41:13Z", "entities": 72236, "from": "an empty index; the same export, image and manifest of the server", "how": "a further start of the rehearsal script, made by mistake after both rehearsals had passed; the script cleared the index and built it again; its SSH session was cut during the build, for a reason not established; the build ran to its end; the script stopped before any rehearsal; the receipts of the two rehearsals, moved aside by the script, were moved back unchanged (same SHA-256)", "kit": "--check only, before the build", "receipts": 0, "indexCheck": { "checked": "2026-10-12T21:36:53Z", "index": "yente-entities-us_ofac_sdn-016a040902-20260909221001-juh", "shards": 1, "replicas": 0, "deletedDocuments": 0, "documents": 72236 }, "catalog": { "checked": "2026-10-12T21:36:53Z", "version": "20260909221001-juh", "indexVersion": "20260909221001-juh", "indexCurrent": true, "indexStale": false }, "kitRequestsBeforeSigning": 0 },
+    { "kind": "index-build", "use": "the set-up of the stand; both runs on the stub and all probes of the server ran after it, before the rehearsals", "date": "2026-10-12", "complete": "2026-10-12T17:05:35Z", "documents": 72236, "manifest": "an earlier manifest of the server, before offline.yml", "checks": "one query with an invented name to /match and a check of /catalog at 17:05:36Z", "containerRecreated": ["17:24Z, with the manifest offline.yml", "18:59Z, with the environment of list.snapshot.server.params.env set explicitly, YENTE_AUTO_REINDEX false among it"], "otherBuilds": "the scripts of the stand started no other build of the index before the rehearsals", "indexChecks": ["17:05Z and 18:59Z: the same index name and number of documents", "17:24Z: /catalog gave the same index_version, with index_current true"], "kit": false, "model": false },
+    { "kind": "model-ping", "date": "2026-10-12", "runId": "model-ping-20261012T205538Z-82ed37", "httpStatus": 200, "returnedModelId": "claude-sonnet-5", "params": {"max_tokens":1024,"thinking":{"type":"disabled"}}, "bookRows": 0, "tools": false, "systemPrompt": false, "listRequests": 0, "logSha256": "302ffde6f11e3b855ca023bbc69f035a193887e00ee0ff57b8419f557a5da891" },
+    { "kind": "model-stub", "modes": ["--model"], "date": "2026-10-12", "runId": "model-20261012T173156Z-1e688d", "receiptSha256": "6e68ea7b68c1b5afd0d8b16cfd50b8b47aa7af1b97345c6c7f48832a77ffdfc4", "logSha256": "d71e249060d6fc6c2d9051974b5ec594ee9f5eaee16339d31a2418864173c3e6", "stubSha256": "96b9222a6e7c373e894cfc07b3165c757438656bbb3d22168a8240b3a1ff7a31", "codeAsFrozen": true, "snapshotAsFrozen": false, "snapshot": "an earlier snapshot.json, limit 5", "maxTokens": 64, "freezeCommit": "the run took place before the freeze commit of 2026-10-12T19:10:09Z; code files and system-prompt.txt on the same bytes", "providerRequests": 0, "files": 0, "prints": ["a line at its start", "when it stopped: the counts of the requests, the SHA-256 of the system prompt and the API version header it received"], "outputKept": "by the party that executes the runs, next to the receipt of the run", "replies": "to the first request of a row, invented text and a tool call whose arguments repeat the received row; to the tool result, an invented final answer" },
+    { "kind": "model-stub", "modes": ["--model"], "date": "2026-10-12", "runId": "model-20261012T190126Z-0d5722", "receiptSha256": "fcba49b50bea99a545ef6352ed6e39c9f71c27831bd9d2fbf9c548257c56d21a", "logSha256": "10ecbd6dc5e114f900687e9aff7c2cb58cca64964d2a67197108226e74eebf8d", "stubSha256": "96b9222a6e7c373e894cfc07b3165c757438656bbb3d22168a8240b3a1ff7a31", "codeAsFrozen": true, "snapshotAsFrozen": true, "decisionsSha256": "749def3e64dd93dc0c5a2b591d2baaa86643acc4d8a45e4a52eadb9d67d4dee8", "decisionsSha256Passes": "the same in all three passes", "maxTokens": 64, "freezeCommit": "the run took place before the freeze commit of 2026-10-12T19:10:09Z, on the same bytes", "providerRequests": 0, "files": 0, "prints": ["a line at its start", "when it stopped: the counts of the requests, the SHA-256 of the system prompt and the API version header it received"], "outputKept": "by the party that executes the runs, next to the receipt of the run", "replies": "to the first request of a row, invented text and a tool call whose arguments repeat the received row; to the tool result, an invented final answer" },
+    { "kind": "other-starts", "date": "2026-10-12", "where": "the machine of the runs", "frozenKit": ["--check 8 times, without network: at the set-up of the copy, at the start of each of the three starts of the rehearsal script, before each of its three baseline runs and before the ping", "--assemble on the export, three times before each rehearsal, the first attempt included", "--rescore of every baseline receipt, without network"], "stubCopies": ["--check", "--model against the stub", "--freeze-check with a test commitment", "--rescore"], "listPing": false, "receipts": "none besides those of priorChecks", "assembleOutput": "the kit prints a ROW line (id, source, inputSha256) for each row and an ASSEMBLY line; the scripts kept only the number of ROW lines, the ASSEMBLY line and the SHA-256 of the whole output" },
+    { "kind": "check-at-freeze", "date": "2026-10-12", "where": "a machine other than the machine of the runs", "kit": "a temporary copy of the frozen kit", "modes": ["--check"], "network": false, "receipts": 0 },
+    { "kind": "acceptance-runs", "runs": "the first three", "date": "not later than 2026-10-02", "where": "a machine other than the machine of the runs", "kit": "temporary copies with earlier versions of the code", "first": { "starts": ["sha256sum -c", "--check"], "network": false }, "secondAndThird": { "date": "2026-10-02", "starts": ["--check", "--list-ping without a list server set: exit code 2 before any network call", "--baseline"], "listServer": "127.0.0.1:9, where nothing listens" }, "third": { "copies": "with files replaced", "starts": ["--check", "--baseline"], "listServer": "127.0.0.1:9, where nothing listens" }, "outputsKept": false, "restsOn": ["the commands of these acceptance runs", "the statement of the party that executes the runs"] },
+    { "kind": "acceptance-runs", "runs": "further", "date": "2026-10-03 to 2026-10-05", "where": "a machine other than the machine of the runs", "kit": "temporary copies with earlier versions of the code", "withoutNetwork": ["--check", "--rubric-test", "--rescore", "--freeze-check", "the refusal of --check --manifest"], "toNothingListening": ["--baseline", "--model", "--list-ping", "--model-ping"], "withExport": ["--assemble", "--baseline", "--model"], "listServer": "127.0.0.1:9, where nothing listens", "modelApi": "127.0.0.1:9, where nothing listens", "result": "none of the --baseline and --model runs completed, and none got a response of the list server; --list-ping and --model-ping got no response", "providerRequests": 0, "assembly": "--assemble gave the full runs[0].expected.assemblySha256 on 2026-10-03" },
+    { "kind": "server-probes", "what": "limit", "date": "2026-10-12", "times": ["17:57Z", "18:00Z", "18:15Z"], "queries": "the list query of row S16 (17:57Z), then of rows S16 and S20 (18:00Z), each at limit 5, 10, 20, 50 and 100; then the list queries of all 69 rows (18:15Z) at limit 5, 10, 20 and 50; with the query bodies of the log of the first run on the stub", "kit": false, "model": false, "use": "the limit of list.snapshot.server.params.match was chosen from them", "record": "the counts and ids printed by the scripts are kept by the party that executes the runs; request and response bodies were not kept" },
+    { "kind": "server-probes", "what": "defaults and scoring algorithm", "date": "2026-10-12", "times": ["17:24Z", "17:31Z", "18:59Z", "19:01Z"], "queries": "invented names, not rows of the book: GET /algorithms and one query at 17:24Z and at 18:59Z; before each run on the stub, three queries, each without the algorithm parameter and with algorithm=logic-v2, which gave the same results", "kit": false, "model": false, "record": "the counts and ids printed by the scripts are kept by the party that executes the runs; request and response bodies were not kept" },
+    { "kind": "provider-model-list", "date": "2026-10-12", "kit": false, "bookRows": 0, "requests": ["each run of the isolation check of the stand, five of them from 17:05Z, the last before the ping: the list of models of the provider, through the proxy, without a key; one of their outputs printed the answer HTTP 401, the other four only that the check passed", "the party that executes the runs, once, with the key used by the public runs, from a machine other than the machine of the runs: the same list; answer HTTP 200"], "until": "2026-10-13T12:36:00Z", "laterRuns": "each further run of the isolation check requests the same list through the proxy without a key; later requests of the kinds in publication.resultManifest.recordsOutsideReceipts are in the result manifest" }
+  ],
+  "kitStarts": { "until": "the completion of this text", "copies": "temporary", "machines": ["the machine of the runs", "one other machine of the party that executes the runs"], "runModesBesidesPriorChecks": 0, "modesCounted": "runModesBesidesPriorChecks counts the modes of run.mjs, not its single starts: until the completion of this text, run.mjs was started in no mode besides those of priorChecks; its starts from 2026-10-13T12:36:00Z are listed in the result manifest, with their dates","checkScripts": { "imported": { "machineOfTheRuns": ["data.js, in the leak check and the check of ties of the rehearsal script and of the stub script"], "acceptanceRuns": ["data.js", "thresholds.js", "scoring.js", "baseline.js", "candidate.js"] }, "purpose": "to read the book and to check receipts against their logs", "network": false, "receipts": 0 }, "betweenCompletionAndSignature": { "onlyModes": ["--check", "--freeze-check"], "listedIn": "the result manifest, with their dates" } },
+  "resultIdentity": {
+    "by": ["pack.id", "pack.surface", "ordinal", "list.snapshot.exportDate", "list.snapshot.listVersion", "list.snapshot.exportSha256"],
+    "otherExport": "a separate result under its own commitment, not a re-execution of this one"
+  },
+  "signing": {
+    "object": "COMMITMENT.json",
+    "method": "sigstore-keyless",
+    "identity": "the identity in the certificate of MANIFEST.json.sigstore, the bundle of MANIFEST.json of rec.bank-ledger.v1",
+    "issuer": "https://github.com/login/oauth",
+    "decision": "the signature is the decision of the pack owner on every rule and every value of this commitment, including those set before the freeze without a separate written decision",
+    "bundle": "COMMITMENT.json.sigstore.json",
+    "transparencyLog": "rekor",
+    "transparencyLogEntry": "Rekor v1, entry hashedrekord 0.0.1",
+    "logIndexField": "logIndex of verificationMaterial.tlogEntries[0] of the bundle, not inclusionProof.logIndex",
+    "bundleMediaType": "application/vnd.dev.sigstore.bundle.v0.3+json",
+    "cosign": "3.1.3 or newer; on 2.x, 2.6.5 or newer (GHSA-fx35-mq7g-6g98)",
+    "identityFromCertificate": "ID=$(jq -r '.verificationMaterial.certificate.rawBytes' MANIFEST.json.sigstore | base64 -d | openssl x509 -inform DER -noout -ext subjectAltName | sed -n 's/^ *email://p')",
+    "verify": [
+      { "file": "COMMITMENT.json", "bundle": "COMMITMENT.json.sigstore.json" },
+      { "file": "snapshot-description.json", "bundle": "snapshot-description.json.sigstore.json" },
+      { "file": "MANIFEST.json", "bundle": "MANIFEST.json.sigstore", "of": "rec.bank-ledger.v1" }
+    ],
+    "verifyCommand": "cosign verify-blob <file> --bundle <bundle> --certificate-identity \"$ID\" --certificate-oidc-issuer https://github.com/login/oauth",
+    "order": "logIndex and integratedTime of verificationMaterial.tlogEntries[0] grow in this order: the bundle of MANIFEST.json of rec.bank-ledger.v1, the description of the export (3216813350), this commitment, the result manifest; the timestamp token of the description is older than the transparency log entry of this commitment; the when of every public receipt is later than that entry, by the clock of the party that executes the runs",
+    "startCondition": "the public runs start only when cosign verify-blob accepts COMMITMENT.json against its bundle with this identity and issuer; the bundle has the mediaType application/vnd.dev.sigstore.bundle.v0.3+json and its entry is hashedrekord 0.0.1 in Rekor v1, with integratedTime; the timestamp token is obtained and its check, signing.timestampCheck, and the check of the token of the description, signing.descriptionTimestampCheck, both give Verification: OK; and COMMITMENT.json, COMMITMENT.md, the bundle, the token, tsa.crt and cacert.pem are published, and so are offline.yml, snapshot-description.json with its bundle and its timestamp token, and the receipts of the two baseline rehearsals and of the first attempt of the rehearsals; a transparency log entry alone is not enough",
+    "timestampToken": "rfc3161",
+    "timestampAuthority": "Free TSA (freetsa.org)",
+    "timestampFiles": {
+      "token": "COMMITMENT.json.tsr",
+      "certificate": { "file": "tsa.crt", "sha256": "8bfb0305bb64e2571ca507552ef3245cb1c2fee8728e0ff8689225081ea13467", "fingerprintSha256": "32:E8:41:A9:5C:C1:16:41:01:FF:DE:41:29:8E:F2:FC:75:C1:C4:37:2E:F0:95:E8:8A:6B:BD:47:DF:B1:91:FC" },
+      "root": { "file": "cacert.pem", "sha256": "2151b61137ffa86bf664691ba67e7da0b19f98c758e3d228d5d8ebf27e044438", "fingerprintSha256": "A6:37:9E:7C:EC:C0:5F:AA:3C:BF:07:60:13:D7:45:E3:27:BB:BA:A3:8C:0B:9A:F2:24:69:D4:70:1D:18:AA:BC" }
+    },
+    "timestampCheck": "openssl ts -verify -data COMMITMENT.json -in COMMITMENT.json.tsr -CAfile cacert.pem -untrusted tsa.crt",
+    "descriptionTimestampCheck": "openssl ts -verify -data snapshot-description.json -in snapshot-description.tsr -CAfile cacert.pem -untrusted tsa.crt",
+    "timestampTime": "the line Time stamp: of openssl ts -reply -in <token> -text",
+    "afterCertificateExpiry": "after tsa.crt expires (2040-02-02), -attime <time of the token in Unix seconds> is added",
+    "timestampPublishedWith": ["COMMITMENT.json.tsr", "tsa.crt", "cacert.pem"],
+    "resultManifestSigner": "the same identity"
+  }
+}

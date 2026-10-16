@@ -1,0 +1,7 @@
+catalogs: []
+datasets:
+  - name: us_ofac_sdn
+    title: "US OFAC SDN (local bulk export)"
+    path: /data/entities.ftm.json
+    version: "20260909221001-juh"
+    load: true

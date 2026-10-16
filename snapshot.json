@@ -1,0 +1,37 @@
+{
+  "descriptionVersion": 1,
+  "scope": "us_ofac_sdn",
+  "exportDate": "2026-09-09T22:10:01",
+  "exportSha256": "81bc254601ee9c0685ad7f8cccdf8a83169464cb4eec957a47280a6854428bda",
+  "exportFormat": "application/json+ftm",
+  "server": {
+    "software": "yente",
+    "version": "5.5.0",
+    "params": {
+      "image": "ghcr.io/opensanctions/yente:5.5.0@sha256:4e46bda3fc0552725b695e5f4691c168e4241f14766405fe3c1b8d959315c137",
+      "platform": "linux/amd64",
+      "env": {
+        "YENTE_AUTO_REINDEX": "false",
+        "YENTE_MATCH_PAGE": "20",
+        "YENTE_MATCH_CANDIDATES": "10",
+        "YENTE_MAX_MATCH_CANDIDATES": "500",
+        "YENTE_MAX_MATCHES": "500",
+        "YENTE_MATCH_FUZZY": "true",
+        "YENTE_DEFAULT_ALGORITHM": "best",
+        "YENTE_BEST_ALGORITHM": "logic-v2",
+        "YENTE_INDEX_SHARDS": "1",
+        "YENTE_INDEX_AUTO_REPLICAS": "0-all"
+      },
+      "manifest": { "file": "offline.yml", "sha256": "464fb195ebccc7e38183c014a1550cd08507e961e8628be1c4de56ee7aca80de" },
+      "index": {
+        "software": "elasticsearch",
+        "version": "9.4.8",
+        "image": "docker.elastic.co/elasticsearch/elasticsearch:9.4.8@sha256:fb7f2d0df199b3ea14a700e88a0b701d502cb44409ece3e1540b1dc1c5d5c403",
+        "platform": "linux/amd64"
+      },
+      "match": { "algorithm": "logic-v2", "limit": 20, "threshold": 0.7 }
+    }
+  },
+  "listVersion": "20260909221001-juh",
+  "versionCheck": "description"
+}

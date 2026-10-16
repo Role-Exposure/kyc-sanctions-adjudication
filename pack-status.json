@@ -1,0 +1,6 @@
+{
+  "statusVersion": 1,
+  "sample": true,
+  "review": "internal",
+  "accepted": { "by": "pack owner", "date": "2026-10-12", "bookSha256": "1381d9c70336a39e612447845d0aec420f32e4fcce719062fb95f0618bf4dfbc" }
+}

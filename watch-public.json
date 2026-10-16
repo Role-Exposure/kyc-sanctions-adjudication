@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "id": "watch.p02.sanctions-screening.noted-literature.001",
+  "boundaryNote": "External literature only. These records do not qualify a pack or system, do not create a Role Exposure run, and do not enter Models or draw a ●. Candidate or base status requires the project’s separate qualification and human-review process.",
+  "qualify": "Noted + Literature. Qualified into pack remains 0 until a separate human review. Map direction 03 is not pack id 02. OpenSanctions is list vendor only, not reviewer. Do not copy external F1 or settlement amounts into this blotter.",
+  "records": [
+    {
+      "id": "watch.lit.wolfsberg-2019.sanctions-screening",
+      "source": {
+        "title": "Wolfsberg Guidance on Sanctions Screening",
+        "authors": [
+          "Wolfsberg Group"
+        ],
+        "publicationDate": "2019-01-21",
+        "publicationDatePrecision": "day",
+        "canonicalUrl": "https://wolfsberg-group.org/news/19",
+        "officialOrganizationUrl": "https://wolfsberg-group.org/resources/general/53"
+      },
+      "target": {
+        "kind": "role",
+        "id": "role.03.sanctions-screening-analyst.wolfsberg-2019",
+        "directionNumber": 3,
+        "name": "Sanctions / screening analyst"
+      },
+      "disposition": "literature",
+      "publicReason": "Industry guidance separating name and customer screening from transaction screening, and covering lists, fuzzy comparison, alert handling and lookback. Useful to keep first-line screening framed as match adjudication rather than auto-block; not a workplace run or Role Exposure evidence.",
+      "rights": {
+        "basis": "nominative-use",
+        "boundary": "Link and cite the bibliographic record only. Public Watch copy is an analyst-authored scope classification and does not reproduce study findings, prose, figures, metrics or case amounts."
+      }
+    },
+    {
+      "id": "watch.lit.ofac-framework-2019.compliance-commitments",
+      "source": {
+        "title": "A Framework for OFAC Compliance Commitments",
+        "authors": [
+          "Office of Foreign Assets Control",
+          "U.S. Department of the Treasury"
+        ],
+        "publicationDate": "2019-05-02",
+        "publicationDatePrecision": "day",
+        "canonicalUrl": "https://ofac.treasury.gov/recent-actions/20190502_33",
+        "officialInstitutionPdfUrl": "https://ofac.treasury.gov/system/files/126/framework_ofac_cc.pdf"
+      },
+      "target": {
+        "kind": "role",
+        "id": "role.03.sanctions-screening-analyst.ofac-framework-2019",
+        "directionNumber": 3,
+        "name": "Sanctions / screening analyst"
+      },
+      "disposition": "literature",
+      "publicReason": "OFAC framework on sanctions compliance programs and appendix root causes such as stale lists, weak data and thin aliases. Explains why a missed-sanction fatal belongs at the desk; not a Role Exposure measurement.",
+      "rights": {
+        "basis": "nominative-use",
+        "boundary": "Link and cite the bibliographic record only. Public Watch copy is an analyst-authored scope classification and does not reproduce study findings, prose, figures, metrics or case amounts."
+      }
+    },
+    {
+      "id": "watch.lit.ofac-faq-name-matches.assessing-hits",
+      "source": {
+        "title": "OFAC FAQ: Assessing name matches on sanctions lists",
+        "authors": [
+          "Office of Foreign Assets Control"
+        ],
+        "publicationDate": "2015-01-30",
+        "publicationDatePrecision": "day",
+        "canonicalUrl": "https://ofac.treasury.gov/faqs/5",
+        "officialOrganizationUrl": "https://ofac.treasury.gov/faqs/topic/1636"
+      },
+      "target": {
+        "kind": "role",
+        "id": "role.03.sanctions-screening-analyst.ofac-faq-name-matches",
+        "directionNumber": 3,
+        "name": "Sanctions / screening analyst"
+      },
+      "disposition": "literature",
+      "publicReason": "Official first-line ladder from alert through list-record quality checks to valid or cleared, then block or reject and report. Related Sanctions List Search FAQs state that public search scores names only and that score is not probability. Regulator tool guidance, later revised; not our pack.",
+      "rights": {
+        "basis": "nominative-use",
+        "boundary": "Link and cite the bibliographic record only. Public Watch copy is an analyst-authored scope classification and does not reproduce study findings, prose, figures, metrics or case amounts."
+      }
+    },
+    {
+      "id": "watch.lit.fatf-2026.rec-targeted-financial-sanctions",
+      "source": {
+        "title": "FATF Recommendations — targeted financial sanctions (Rec. interpretive update)",
+        "authors": [
+          "Financial Action Task Force"
+        ],
+        "publicationDate": "2026-06",
+        "publicationDatePrecision": "month",
+        "canonicalUrl": "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatfrecommendations.html",
+        "officialOrganizationUrl": "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Bpp-finsanctions-tf-r6.html"
+      },
+      "target": {
+        "kind": "role",
+        "id": "role.03.sanctions-screening-analyst.fatf-2026-tfs",
+        "directionNumber": 3,
+        "name": "Sanctions / screening analyst"
+      },
+      "disposition": "literature",
+      "publicReason": "Country obligation to freeze designated assets without delay under targeted financial sanctions standards. Background for why the screening desk exists; not a matcher benchmark or Role Exposure run.",
+      "rights": {
+        "basis": "nominative-use",
+        "boundary": "Link and cite the bibliographic record only. Public Watch copy is an analyst-authored scope classification and does not reproduce study findings, prose, figures, metrics or case amounts."
+      }
+    },
+    {
+      "id": "watch.lit.ofac-payoneer-2021.enforcement-release",
+      "source": {
+        "title": "Settlement Agreement between OFAC and Payoneer Inc.",
+        "authors": [
+          "Office of Foreign Assets Control"
+        ],
+        "publicationDate": "2021-07-23",
+        "publicationDatePrecision": "day",
+        "canonicalUrl": "https://ofac.treasury.gov/recent-actions/20210723",
+        "officialInstitutionPdfUrl": "https://ofac.treasury.gov/system/files/126/20210723_payoneer_inc.pdf"
+      },
+      "target": {
+        "kind": "role",
+        "id": "role.03.sanctions-screening-analyst.ofac-payoneer-2021",
+        "directionNumber": 3,
+        "name": "Sanctions / screening analyst"
+      },
+      "disposition": "literature",
+      "publicReason": "Public enforcement narrative on weak screening that missed close SDN matches, unscreened BIC identifiers, and auto-release of a pended queue. Field meaning of a missed-sanction fatal; settlement figures stay off this blotter; not a Role Exposure fixture.",
+      "rights": {
+        "basis": "nominative-use",
+        "boundary": "Link and cite the bibliographic record only. Public Watch copy is an analyst-authored scope classification and does not reproduce study findings, prose, figures, metrics or case amounts."
+      }
+    },
+    {
+      "id": "watch.lit.feds-2025-092.llm-vs-fuzzy-sanctions",
+      "source": {
+        "title": "Can LLMs Improve Sanctions Screening in the Financial System? Evidence from a Fuzzy Matching Assessment",
+        "authors": [
+          "Jeffrey S. Allen",
+          "Max S. S. Hatfield"
+        ],
+        "publicationDate": "2025-09",
+        "publicationDatePrecision": "month",
+        "canonicalUrl": "https://www.federalreserve.gov/econres/feds/can-llms-improve-sanctions-screening-in-the-financial-system-evidence-from-a-fuzzy-matching-assessment.htm",
+        "officialInstitutionPdfUrl": "https://www.federalreserve.gov/econres/feds/files/2025092pap.pdf"
+      },
+      "target": {
+        "kind": "role",
+        "id": "role.03.sanctions-screening-analyst.feds-2025-092",
+        "directionNumber": 3,
+        "name": "Sanctions / screening analyst"
+      },
+      "disposition": "literature",
+      "publicReason": "Federal Reserve staff paper comparing language models to fuzzy baselines on OFAC-like synthetic organization name and address strings. Their detection and false-positive figures stay on their paper. Synthetic test names were model-generated, so this is not our instrument and not a Models row.",
+      "rights": {
+        "basis": "nominative-use",
+        "boundary": "Link and cite the bibliographic record only. Public Watch copy is an analyst-authored scope classification and does not reproduce study findings, prose, figures, metrics or case amounts."
+      }
+    },
+    {
+      "id": "watch.lit.opensanctions-pairs-2026.entity-matching",
+      "source": {
+        "title": "OpenSanctions Pairs: Large-Scale Entity Matching with LLMs",
+        "authors": [
+          "Chandler Smith",
+          "Magnus Sesodia",
+          "Friedrich Lindenberg",
+          "Christian Schroeder de Witt"
+        ],
+        "publicationDate": "2026-08-25",
+        "publicationDatePrecision": "day",
+        "canonicalUrl": "https://arxiv.org/abs/2603.11051",
+        "doiUrl": "https://doi.org/10.48550/arXiv.2603.11051"
+      },
+      "target": {
+        "kind": "role",
+        "id": "role.03.sanctions-screening-analyst.opensanctions-pairs-2026",
+        "directionNumber": 3,
+        "name": "Sanctions / screening analyst"
+      },
+      "disposition": "literature",
+      "publicReason": "Open pairwise entity-matching benchmark on sanctions and OSINT data; useful for future P02 specification work, not workplace evidence, not OFAC, and not a Role Exposure run. Their matcher scores stay off this blotter and out of Models.",
+      "rights": {
+        "basis": "nominative-use",
+        "boundary": "Link and cite the bibliographic record only. Public Watch copy is an analyst-authored scope classification and does not reproduce study findings, prose, figures, metrics or case amounts."
+      }
+    },
+    {
+      "id": "watch.lit.opensanctions-2026.ofac-matcher-note",
+      "source": {
+        "title": "How we reverse-engineered OFAC’s sanctions screening algorithm",
+        "authors": [
+          "OpenSanctions"
+        ],
+        "publicationDate": "2026-07-01",
+        "publicationDatePrecision": "day",
+        "canonicalUrl": "https://www.opensanctions.org/articles/2026-07-01-ofac-matcher/"
+      },
+      "target": {
+        "kind": "role",
+        "id": "role.03.sanctions-screening-analyst.opensanctions-ofac-matcher-2026",
+        "directionNumber": 3,
+        "name": "Sanctions / screening analyst"
+      },
+      "disposition": "literature",
+      "publicReason": "Engineering note on emulating the public Sanctions List Search name score and on score versus probability. Literature about a possible future baseline candidate; the ofac or yente matcher is not Qualified into pack here and is not a seated baseline.",
+      "rights": {
+        "basis": "nominative-use",
+        "boundary": "Link and cite the bibliographic record only. Public Watch copy is an analyst-authored scope classification and does not reproduce study findings, prose, figures, metrics or case amounts."
+      }
+    }
+  ]
+}

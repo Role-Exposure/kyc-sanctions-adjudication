@@ -1,0 +1,13 @@
+{
+  "thresholdsVersion": 1,
+  "rubric": {
+    "holdMax": 20,
+    "worksHoldMax": 17,
+    "hitPrecisionMin": 0.8,
+    "invalid": { "maxRows": 2, "withinTolerance": "hold" }
+  },
+  "repeats": { "n": 3, "aggregation": "worst-pass" },
+  "intervals": { "method": "clopper-pearson-upper", "level": 0.95, "metrics": ["missedRate"] },
+  "perEntity": true,
+  "baseline": { "hitMin": 0.9, "holdMin": 0.7, "thinHoldFloor": 0.55 }
+}
