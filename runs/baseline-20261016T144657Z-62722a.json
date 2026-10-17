@@ -1,0 +1,2710 @@
+{
+  "schemaVersion": 1,
+  "licence": "CC-BY-NC-4.0",
+  "runId": "baseline-20261016T144657Z-62722a",
+  "status": "completed",
+  "kit": {
+    "sha256sums": "4587667f28bc792cf4f5f4f73bd9ffecf6ff51f577dfc02dcf0459aa0f55948c"
+  },
+  "packStatus": {
+    "statusSha256": "ffbb9d65de7491321e8d9e52a36dc273256065b8f17479ed33eef37ab9b4bd2d",
+    "sample": true,
+    "review": "internal",
+    "accepted": {
+      "by": "pack owner",
+      "date": "2026-10-12",
+      "bookSha256": "1381d9c70336a39e612447845d0aec420f32e4fcce719062fb95f0618bf4dfbc"
+    }
+  },
+  "commitment": {
+    "ordinal": 2,
+    "sha256": "deab31989bb23435c0a08d3ffd8a41d8d2718d7f211335bd4efe8804a0f7443a"
+  },
+  "meta": {
+    "id": "kyc.sanctions-adjudication.v1",
+    "pack": "v1",
+    "bookVersion": "2",
+    "title": "Name-screening L1",
+    "banner": "SAMPLE · accepted 2026-10-12 · internal review · not HOLDOUT",
+    "fatal": "Missed sanction: gold hit posted as clear."
+  },
+  "when": "2026-10-16T14:47:41.072Z",
+  "runtime": {
+    "node": "v24.21.0"
+  },
+  "run": {
+    "listTimeoutMs": 30000,
+    "modelTimeoutMs": 120000,
+    "retryMax": 2,
+    "retryDelayMs": 1000
+  },
+  "candidate": {
+    "name": "baseline.ofac-style-fuzzy.v1",
+    "kind": "deterministic-fuzzy",
+    "family": "ofac-style-rules",
+    "notModel": true,
+    "methods": [
+      "normalize",
+      "jaro-winkler",
+      "levenshtein-ratio",
+      "token-set"
+    ]
+  },
+  "toolsAllowed": [
+    "opensanctions.match"
+  ],
+  "list": {
+    "vendor": "OpenSanctions",
+    "endpoint": "/match/us_ofac_sdn"
+  },
+  "snapshot": {
+    "descriptionVersion": 1,
+    "scope": "us_ofac_sdn",
+    "exportDate": "2026-09-09T22:10:01",
+    "exportSha256": "81bc254601ee9c0685ad7f8cccdf8a83169464cb4eec957a47280a6854428bda",
+    "exportFormat": "application/json+ftm",
+    "server": {
+      "software": "yente",
+      "version": "5.5.0",
+      "params": {
+        "image": "ghcr.io/opensanctions/yente:5.5.0@sha256:4e46bda3fc0552725b695e5f4691c168e4241f14766405fe3c1b8d959315c137",
+        "platform": "linux/amd64",
+        "env": {
+          "YENTE_AUTO_REINDEX": "false",
+          "YENTE_MATCH_PAGE": "20",
+          "YENTE_MATCH_CANDIDATES": "10",
+          "YENTE_MAX_MATCH_CANDIDATES": "500",
+          "YENTE_MAX_MATCHES": "500",
+          "YENTE_MATCH_FUZZY": "true",
+          "YENTE_DEFAULT_ALGORITHM": "best",
+          "YENTE_BEST_ALGORITHM": "logic-v2",
+          "YENTE_INDEX_SHARDS": "1",
+          "YENTE_INDEX_AUTO_REPLICAS": "0-all"
+        },
+        "manifest": {
+          "file": "offline.yml",
+          "sha256": "464fb195ebccc7e38183c014a1550cd08507e961e8628be1c4de56ee7aca80de"
+        },
+        "index": {
+          "software": "elasticsearch",
+          "version": "9.4.8",
+          "image": "docker.elastic.co/elasticsearch/elasticsearch:9.4.8@sha256:fb7f2d0df199b3ea14a700e88a0b701d502cb44409ece3e1540b1dc1c5d5c403",
+          "platform": "linux/amd64"
+        },
+        "match": {
+          "algorithm": "logic-v2",
+          "limit": 20,
+          "threshold": 0.7
+        }
+      }
+    },
+    "listVersion": "20260909221001-juh",
+    "versionCheck": "description",
+    "descriptionSha256": "cdb2ad5a3521db58175ba7f39d051ca0e527eb7d1e3707e2e6d4c80f67a991ac"
+  },
+  "input": {
+    "recipeVersion": 1,
+    "assemblySha256": "1563f87fd858f0ac34f556808f34822b4963d8e9f7ca73822f97a20e6d71bd75",
+    "parties": [
+      {
+        "id": "S01",
+        "source": "entity",
+        "entity": "NK-UaDjkyrKmcqqkpzKPktBjQ",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption"
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "d5c75fb7b9f1f3efd0371def11a8cca6c149056628288c77198d8c7f162fba08"
+      },
+      {
+        "id": "S02",
+        "source": "entity",
+        "entity": "NK-UaDjkyrKmcqqkpzKPktBjQ",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "name-diacritic"
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "cc909cc6e08faf7c7cb97ea307ea2e34715b2d97b03ddaf875cac36a17906b86"
+      },
+      {
+        "id": "S03",
+        "source": "entity",
+        "entity": "NK-np5cQfUWw8tmAJYUiUZFnu",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption"
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "a543ec4f9ad277444895fe5ad855b442d712407ad4b5ba9131b97fee88438314"
+      },
+      {
+        "id": "S04",
+        "source": "entity",
+        "entity": "NK-np5cQfUWw8tmAJYUiUZFnu",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "surname-first"
+              ]
+            ]
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "754488d84a0d98c56850ce7e0dd71d4fbe94f2de59f5ce224ecc9f634e4eaba8"
+      },
+      {
+        "id": "S05",
+        "source": "entity",
+        "entity": "NK-PssSiFsMFUHZHipLzpLGtw",
+        "recipe": {
+          "schema": "Organization",
+          "name": {
+            "from": "caption"
+          }
+        },
+        "inputSha256": "cac9e37af6311e71e1fb46d6fdf8182c463287056cfe32ba554283553f3c5841"
+      },
+      {
+        "id": "S06",
+        "source": "entity",
+        "entity": "NK-EWoUqPQigKAyDHY7NzZ4m4",
+        "recipe": {
+          "schema": "Organization",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "title"
+              ]
+            ]
+          },
+          "country": "card"
+        },
+        "inputSha256": "691a7308236ea788030a5a2cbdafe9883dda60aa6bec2368b2078ae0cffac112"
+      },
+      {
+        "id": "S07",
+        "source": "entity",
+        "entity": "NK-P6qsHsEUv5L6WmgmRRsZ3p",
+        "recipe": {
+          "schema": "Organization",
+          "name": {
+            "from": "caption"
+          },
+          "country": "card"
+        },
+        "inputSha256": "880c218dec6637cdd331b8e39da782e961626ccd5e05685aaf49a91b0dfedc86"
+      },
+      {
+        "id": "S08",
+        "source": "entity",
+        "entity": "NK-eb9EMWGpusguZ2D6BFZLfr",
+        "recipe": {
+          "schema": "Organization",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "title"
+              ]
+            ]
+          },
+          "country": "card"
+        },
+        "inputSha256": "6d08f05f84c4f550821ad5959fee9a300863397110c75f383bd9efc5303f8cb0"
+      },
+      {
+        "id": "S09",
+        "source": "entity",
+        "entity": "NK-UaDjkyrKmcqqkpzKPktBjQ",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "upper"
+              ]
+            ]
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "bbbba77d16e77b4f753d0201adcae3c6a4a0fda5d5309abdc29ac8c0ed6b450a"
+      },
+      {
+        "id": "S10",
+        "source": "entity",
+        "entity": "NK-np5cQfUWw8tmAJYUiUZFnu",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption"
+          },
+          "dob": "card",
+          "passport": "card",
+          "country": "card"
+        },
+        "inputSha256": "25048dedb5ebff74031ea1485782f688aa28afae5d78029c2b86d889784a3c93"
+      },
+      {
+        "id": "S11",
+        "source": "entity",
+        "entity": "NK-UaDjkyrKmcqqkpzKPktBjQ",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "typo",
+                1,
+                6,
+                "s"
+              ]
+            ]
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "d28881035579f8649416a1539f76d59ffd2a13b589588c796afd7869a6372e7e"
+      },
+      {
+        "id": "S12",
+        "source": "entity",
+        "entity": "NK-np5cQfUWw8tmAJYUiUZFnu",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "initial",
+                0
+              ]
+            ]
+          },
+          "dob": "card",
+          "city": "card",
+          "country": "card"
+        },
+        "inputSha256": "dd07f6ee90a3a8ca4051cf0ebc9eb2411354e295a2f82d9ddc258d6be4340edb"
+      },
+      {
+        "id": "S13",
+        "source": "entity",
+        "entity": "NK-PssSiFsMFUHZHipLzpLGtw",
+        "recipe": {
+          "schema": "Organization",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "legal-ltd"
+              ]
+            ]
+          }
+        },
+        "inputSha256": "5c682f39e59a62eabda8d4882d4ec321fecfe1bdeeeb4b4184c3490c54d5d816"
+      },
+      {
+        "id": "S14",
+        "source": "entity",
+        "entity": "NK-EWoUqPQigKAyDHY7NzZ4m4",
+        "recipe": {
+          "schema": "Organization",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "title"
+              ],
+              [
+                "legal-ltd"
+              ]
+            ]
+          },
+          "country": "card"
+        },
+        "inputSha256": "7d53bf872fb489846fa44eac76e637bdca6bc398288cbf5e4e717a0f45920436"
+      },
+      {
+        "id": "S15",
+        "source": "entity",
+        "entity": "NK-UaDjkyrKmcqqkpzKPktBjQ",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "keep",
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          },
+          "country": "card"
+        },
+        "inputSha256": "8713fcde6ce3d21a3175092e5ddaf96eaff2f3ddc7922a02509c2c6cf81dc0cc"
+      },
+      {
+        "id": "S16",
+        "source": "entity",
+        "entity": "NK-np5cQfUWw8tmAJYUiUZFnu",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "keep",
+                [
+                  1
+                ]
+              ]
+            ]
+          },
+          "country": "card"
+        },
+        "inputSha256": "209bf7e2bc947b29fd1230f1f380b8c5f2f4f4c1150441046c7971bc61e04487"
+      },
+      {
+        "id": "S17",
+        "source": "entity",
+        "entity": "NK-np5cQfUWw8tmAJYUiUZFnu",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption"
+          },
+          "dob": {
+            "yearShift": 24
+          },
+          "country": "card"
+        },
+        "inputSha256": "b73dec9420168425bce13ba7e53ef53ab7aded4d48116891c103ff173f1a066d"
+      },
+      {
+        "id": "S18",
+        "source": "entity",
+        "entity": "NK-PssSiFsMFUHZHipLzpLGtw",
+        "recipe": {
+          "schema": "Organization",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "keep",
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          }
+        },
+        "inputSha256": "d21e0018809b58de523a529b2114bc09f312b38bd4daf38f8612d6d858c4c93c"
+      },
+      {
+        "id": "S19",
+        "source": "entity",
+        "entity": "NK-UaDjkyrKmcqqkpzKPktBjQ",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption"
+          },
+          "country": "other"
+        },
+        "inputSha256": "ce7a851b640449221b64d69550cdb7ed1ed4a94fd0f9fc96d2510a2d01231820"
+      },
+      {
+        "id": "S20",
+        "source": "literal",
+        "inputSha256": "e3a8cfb5edf93b4c0fd5d615ac733810ac5dbf5553c96e3ff57162db30e9a1ce"
+      },
+      {
+        "id": "S21",
+        "source": "entity",
+        "entity": "NK-UaDjkyrKmcqqkpzKPktBjQ",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "keep",
+                [
+                  1,
+                  2
+                ]
+              ]
+            ]
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "3a7823a2ec5660d65062cbf39d327bc94c86019dd15255eb3d9f9eed9a1c452f"
+      },
+      {
+        "id": "S22",
+        "source": "literal",
+        "inputSha256": "64a4176c406725bfea86aea9200ac0abd7f05ebdbac443ba36a6906f7e6fee55"
+      },
+      {
+        "id": "S23",
+        "source": "literal",
+        "inputSha256": "239676ffffea5a7fb3fcf9dc664096892905f87868d041a6dd4ea6852dac5222"
+      },
+      {
+        "id": "S24",
+        "source": "literal",
+        "inputSha256": "a6688128d65146ea77616082eb2896e0263338a944060be6104fee270f4b0f81"
+      },
+      {
+        "id": "S25",
+        "source": "literal",
+        "inputSha256": "f3d0fd1e2fe4f5e046a309186687e239312616bea52cca9459263048a34cd68c"
+      },
+      {
+        "id": "S26",
+        "source": "literal",
+        "inputSha256": "d1f664608557192b178ac3a879a6f337dfe7aac5fe1eb2426aa858887ba615d6"
+      },
+      {
+        "id": "S27",
+        "source": "literal",
+        "inputSha256": "709d6abf06e2b11b4b0f2846240fa09b0fdbcc2e896fbabedb6a7680819fecae"
+      },
+      {
+        "id": "S28",
+        "source": "literal",
+        "inputSha256": "04b8d532dd48eb723991c2ef550c6492256d36ef072bc678b6328392f69db302"
+      },
+      {
+        "id": "S29",
+        "source": "literal",
+        "inputSha256": "3109c49228faa40b461cdc05f49241ef4d304c6c2d497063eb235179daaeec54"
+      },
+      {
+        "id": "S30",
+        "source": "literal",
+        "inputSha256": "8a13e40f17115dfcb53c9b28c3a757b32e6ba94c3a6b4674ce438cc1aba14119"
+      },
+      {
+        "id": "S31",
+        "source": "literal",
+        "inputSha256": "a306875c38534e94e1411b13a2de8c119d4c266f2b2de8e0c8406119b76efca7"
+      },
+      {
+        "id": "S32",
+        "source": "literal",
+        "inputSha256": "3570a610f2803bae39d9be104ee964567cbe4ce18d1991bdd638229fae651581"
+      },
+      {
+        "id": "S33",
+        "source": "literal",
+        "inputSha256": "e8a11aea88e529e71dbb120d1fb4a69608c8ef5649650b99dc9a7be0e17143b7"
+      },
+      {
+        "id": "S34",
+        "source": "literal",
+        "inputSha256": "d18342622be2155dc4d720c06283b411315013dc041fd9090ed83f50d3fd1543"
+      },
+      {
+        "id": "S35",
+        "source": "literal",
+        "inputSha256": "7a497f8f557ba372670dce7efb018bfcb676734580eb41dc3e3c4be711782434"
+      },
+      {
+        "id": "S36",
+        "source": "literal",
+        "inputSha256": "b938732c7da98ab7bede1b59121a7172849abce2474ecef9988321c255e8b1a1"
+      },
+      {
+        "id": "S37",
+        "source": "literal",
+        "inputSha256": "f5238caa1b7c694d5d9dc29847c88cd15f88727b59848bb017495eeee52f7cb4"
+      },
+      {
+        "id": "S38",
+        "source": "literal",
+        "inputSha256": "f9c5a36df048f2e44dd11309e74a8a13f8aa70f513fcbbb12dffe72bb746031b"
+      },
+      {
+        "id": "S39",
+        "source": "literal",
+        "inputSha256": "d741278220d518268b44f61d14fc0b03913885c9591ef33ea595374095ff8f7d"
+      },
+      {
+        "id": "S40",
+        "source": "literal",
+        "inputSha256": "584245674afb1b061a7bc4d832b7ba2dc53317121909789ca4b0735be1c7831d"
+      },
+      {
+        "id": "S41",
+        "source": "entity",
+        "entity": "NK-Ygu8FoKwgvzHFUSsn2fV3B",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "title"
+              ]
+            ]
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "de2d01286e8e2c6578ba9226fd61aeee7d90ed412f957a213c9dae4398765fd9"
+      },
+      {
+        "id": "S42",
+        "source": "entity",
+        "entity": "NK-Ygu8FoKwgvzHFUSsn2fV3B",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "weakAlias",
+            "index": 0
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "86670b641de3351b036b6bc6ce82cb426ffd71ce68fb8b20d4ab94d1b66e5341"
+      },
+      {
+        "id": "S43",
+        "source": "entity",
+        "entity": "NK-GBCao5kyLFSYhSgrJfvYts",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "title"
+              ]
+            ]
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "9decfc104884e47061875c7ca27df9d4b0a786c7f487194f5c36f75f1d2a0f08"
+      },
+      {
+        "id": "S44",
+        "source": "entity",
+        "entity": "NK-GBCao5kyLFSYhSgrJfvYts",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "surname-first"
+              ]
+            ]
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "c4110393d57f7923cf3496369ffed1f49097f110a7d91454b66016603800dd0f"
+      },
+      {
+        "id": "S45",
+        "source": "entity",
+        "entity": "NK-KCrjZxJAcaTo7cSzjxa4Cz",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption"
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "534cb543788672ed30b4043b604134da11965602c6f800d26a368b613193d7c5"
+      },
+      {
+        "id": "S46",
+        "source": "entity",
+        "entity": "NK-KCrjZxJAcaTo7cSzjxa4Cz",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "keep",
+                [
+                  0,
+                  2,
+                  3
+                ]
+              ]
+            ]
+          },
+          "dob": "card",
+          "passport": "card",
+          "country": "card"
+        },
+        "inputSha256": "e034c5928a918a8763fd03446d2b8c869786d9dd453908b4b5d972d93f7ecfa4"
+      },
+      {
+        "id": "S47",
+        "source": "entity",
+        "entity": "NK-dBuaFmcKCWCd7FFWgnFvW4",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "insert",
+                1,
+                "Dario"
+              ]
+            ]
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "88a561db7eb2a459143171d1b181bbf246dc15c2a0ecb6e3e05385311e019d2b"
+      },
+      {
+        "id": "S48",
+        "source": "entity",
+        "entity": "NK-aBsVPAocpLNWeSf8pvjtoH",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption"
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "4d216e7dd7e8feeb74a6c743415309b0c7759116b1548b23ec0aed59c4b67e8b"
+      },
+      {
+        "id": "S49",
+        "source": "entity",
+        "entity": "NK-o7u2aBckg3ZKmvfrDvgrcn",
+        "recipe": {
+          "schema": "Organization",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "title"
+              ]
+            ]
+          },
+          "country": "card"
+        },
+        "inputSha256": "5981b25512c74256c4eadfdec3cb409ec377397cea1723f7cb308c60191aaddf"
+      },
+      {
+        "id": "S50",
+        "source": "entity",
+        "entity": "NK-o7u2aBckg3ZKmvfrDvgrcn",
+        "recipe": {
+          "schema": "Organization",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "title"
+              ],
+              [
+                "legal-ltd"
+              ]
+            ]
+          },
+          "country": "card"
+        },
+        "inputSha256": "1ef515f995971490bc7ead37272df2518345f50735013ced816aa7ab3cfa44f8"
+      },
+      {
+        "id": "S51",
+        "source": "entity",
+        "entity": "NK-ePvfhq5RuYnxmhF42ertt7",
+        "recipe": {
+          "schema": "Organization",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "title",
+                [
+                  2
+                ]
+              ]
+            ]
+          },
+          "country": "card"
+        },
+        "inputSha256": "2ebbc09bc0ece25241fa5f6d9b157bbc73c86e4f106354315732fafce477df6f"
+      },
+      {
+        "id": "S52",
+        "source": "entity",
+        "entity": "NK-Ygu8FoKwgvzHFUSsn2fV3B",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "keep",
+                [
+                  0,
+                  2
+                ]
+              ],
+              [
+                "title"
+              ]
+            ]
+          },
+          "country": "card"
+        },
+        "inputSha256": "3eda53bf65d6ad8948f581d363130e623f00ecbb92e09081a1ad27a7800628e0"
+      },
+      {
+        "id": "S53",
+        "source": "entity",
+        "entity": "NK-GBCao5kyLFSYhSgrJfvYts",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "keep",
+                [
+                  1
+                ]
+              ],
+              [
+                "title"
+              ]
+            ]
+          },
+          "country": "card"
+        },
+        "inputSha256": "0b4dcba71f3878d980b5f6e1bc20ef562e81781ba66da3eca3e98534c1fbf5d0"
+      },
+      {
+        "id": "S54",
+        "source": "entity",
+        "entity": "NK-GBCao5kyLFSYhSgrJfvYts",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "title"
+              ]
+            ]
+          },
+          "dob": {
+            "yearShift": 13
+          },
+          "country": "card"
+        },
+        "inputSha256": "0b6cba7570fab2c29fec371abd138a1c436664f21c0e261d761e2c2cdeabdedc"
+      },
+      {
+        "id": "S55",
+        "source": "entity",
+        "entity": "NK-o7u2aBckg3ZKmvfrDvgrcn",
+        "recipe": {
+          "schema": "Organization",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "keep",
+                [
+                  0,
+                  1
+                ]
+              ],
+              [
+                "title"
+              ]
+            ]
+          }
+        },
+        "inputSha256": "efe2fe6be3708fb5435a1da7d5d7821b570c4d3deedcbdd71a186ade67b26a6d"
+      },
+      {
+        "id": "S56",
+        "source": "entity",
+        "entity": "NK-KCrjZxJAcaTo7cSzjxa4Cz",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "keep",
+                [
+                  0,
+                  2
+                ]
+              ]
+            ]
+          },
+          "country": "other"
+        },
+        "inputSha256": "aff18d3b95cd6f30a29d2debc2cdf06277d564596fc2aa9cb74927e51c21e1cf"
+      },
+      {
+        "id": "S57",
+        "source": "entity",
+        "entity": "NK-dBuaFmcKCWCd7FFWgnFvW4",
+        "recipe": {
+          "schema": "Person",
+          "name": {
+            "from": "caption",
+            "ops": [
+              [
+                "keep",
+                [
+                  1,
+                  2
+                ]
+              ]
+            ]
+          },
+          "dob": "card",
+          "country": "card"
+        },
+        "inputSha256": "8531585da62ac21fd1f4f512379c6ace501dcdb9a42f27f0c708880dafbb999a"
+      },
+      {
+        "id": "S58",
+        "source": "literal",
+        "inputSha256": "cba1daa7db6da4b1c8a59e3044d1b2db81653c5adfa7b5bb49ef9f37ae4bf53d"
+      },
+      {
+        "id": "S59",
+        "source": "literal",
+        "inputSha256": "ed4957e1093dc14baf6cce441c35f4766ce68b1f55cf9501cdf4a742e29c54f6"
+      },
+      {
+        "id": "S60",
+        "source": "literal",
+        "inputSha256": "0bb8081e0a9a70016144dad94006e7bbc6da3b7cd4dba3b098cf0e753e694eaa"
+      },
+      {
+        "id": "S61",
+        "source": "literal",
+        "inputSha256": "31a018cb099cdd806bba05cdadeddff53431560ecbabc06199632cc4783c6420"
+      },
+      {
+        "id": "S62",
+        "source": "literal",
+        "inputSha256": "27e2323ef52a8855a5db3bfa5c7e942707d5edeffd64b0496a20976574354f1f"
+      },
+      {
+        "id": "S63",
+        "source": "literal",
+        "inputSha256": "da5fb689772edf48f78d573116bdc20edcc3cc653df7449fb1a70f268125694c"
+      },
+      {
+        "id": "S64",
+        "source": "literal",
+        "inputSha256": "aca094f609437095fe9babca75d48d5579be30a3cc59e0686db7d0ba5a91cfbd"
+      },
+      {
+        "id": "S65",
+        "source": "literal",
+        "inputSha256": "5126572abf3a80ad6e94d117de14e4e67a08e9de5b209bb7f1f57542552d4351"
+      },
+      {
+        "id": "S66",
+        "source": "literal",
+        "inputSha256": "871243f3adfa2c36a216bbfb20ef3ba74e595e090210a1294758d38461c430aa"
+      },
+      {
+        "id": "S67",
+        "source": "literal",
+        "inputSha256": "93c9f35e75faf7d470e00a374da5911a134dc74ee482110525a0fba60c49ac12"
+      },
+      {
+        "id": "S68",
+        "source": "literal",
+        "inputSha256": "294fae4fccc38f49dd660eddd2170effbf310a201c0e6ecca36c0224e7bab44c"
+      },
+      {
+        "id": "S69",
+        "source": "literal",
+        "inputSha256": "567d5114ca7fc1f9c9c6f1f203c5f229aa207faefbd62b84e9f1bede678d806a"
+      }
+    ]
+  },
+  "thresholdsSha256": "cc1ce9f16002415f3961a877134a0b6c34266728e32b9e8f1897853c83a88fa5",
+  "thresholds": {
+    "thresholdsVersion": 1,
+    "rubric": {
+      "holdMax": 20,
+      "worksHoldMax": 17,
+      "hitPrecisionMin": 0.8,
+      "invalid": {
+        "maxRows": 2,
+        "withinTolerance": "hold"
+      }
+    },
+    "repeats": {
+      "n": 3,
+      "aggregation": "worst-pass"
+    },
+    "intervals": {
+      "method": "clopper-pearson-upper",
+      "level": 0.95,
+      "metrics": [
+        "missedRate"
+      ]
+    },
+    "perEntity": true,
+    "baseline": {
+      "hitMin": 0.9,
+      "holdMin": 0.7,
+      "thinHoldFloor": 0.55
+    }
+  },
+  "repeats": {
+    "n": 1
+  },
+  "calls": {
+    "list": {
+      "ok": 70,
+      "failed": 0,
+      "retries": 0
+    },
+    "model": {
+      "ok": 0,
+      "failed": 0,
+      "retries": 0
+    }
+  },
+  "log": {
+    "file": "baseline-20261016T144657Z-62722a.log.jsonl",
+    "sha256": "09d53800fdf29d42a343910f0f3bf1f81f523a0a9e33abd5c8e4072254ee787e"
+  },
+  "passes": [
+    {
+      "index": 1,
+      "status": "completed",
+      "calls": {
+        "list": {
+          "ok": 69,
+          "failed": 0,
+          "retries": 0
+        },
+        "model": {
+          "ok": 0,
+          "failed": 0,
+          "retries": 0
+        }
+      },
+      "decisions": [
+        {
+          "id": "S01",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-UaDjkyrKmcqqkpzKPktBjQ",
+            "score": 1,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S02",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-UaDjkyrKmcqqkpzKPktBjQ",
+            "score": 1,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S03",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-np5cQfUWw8tmAJYUiUZFnu",
+            "score": 1,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S04",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 0.5151515151515151,
+            "lev": 0.09090909090909094,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-np5cQfUWw8tmAJYUiUZFnu",
+            "score": 1,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S05",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-PssSiFsMFUHZHipLzpLGtw",
+            "score": 1,
+            "schema": "Organization"
+          }
+        },
+        {
+          "id": "S06",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-EWoUqPQigKAyDHY7NzZ4m4",
+            "score": 1,
+            "schema": "Organization"
+          }
+        },
+        {
+          "id": "S07",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-P6qsHsEUv5L6WmgmRRsZ3p",
+            "score": 1,
+            "schema": "Organization"
+          }
+        },
+        {
+          "id": "S08",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-eb9EMWGpusguZ2D6BFZLfr",
+            "score": 1,
+            "schema": "Organization"
+          }
+        },
+        {
+          "id": "S09",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-UaDjkyrKmcqqkpzKPktBjQ",
+            "score": 1,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S10",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-np5cQfUWw8tmAJYUiUZFnu",
+            "score": 1,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S11",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 0.9809523809523809,
+          "fuzzy": {
+            "score": 0.9809523809523809,
+            "jw": 0.9809523809523809,
+            "lev": 0.9523809523809523,
+            "tokenSet": 0.7404761904761905
+          },
+          "topMatch": {
+            "id": "NK-UaDjkyrKmcqqkpzKPktBjQ",
+            "score": 0.9115646258503401,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S12",
+          "decision": "clear",
+          "reason": "score-clear",
+          "matchCalls": 1,
+          "score": 0.6212121212121212,
+          "fuzzy": {
+            "score": 0.6212121212121212,
+            "jw": 0.5545454545454546,
+            "lev": 0.5454545454545454,
+            "tokenSet": 0.6212121212121212
+          },
+          "topMatch": {
+            "id": "NK-np5cQfUWw8tmAJYUiUZFnu",
+            "score": 0.9722222222222222,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S13",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-PssSiFsMFUHZHipLzpLGtw",
+            "score": 1,
+            "schema": "Organization"
+          }
+        },
+        {
+          "id": "S14",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-EWoUqPQigKAyDHY7NzZ4m4",
+            "score": 1,
+            "schema": "Organization"
+          }
+        },
+        {
+          "id": "S15",
+          "decision": "hold",
+          "reason": "thin-elevated-hold",
+          "matchCalls": 1,
+          "score": 0.9214574898785426,
+          "fuzzy": {
+            "score": 0.9214574898785426,
+            "jw": 0.9214574898785426,
+            "lev": 0.6842105263157895,
+            "tokenSet": 0.7940620782726047
+          },
+          "topMatch": {
+            "id": "NK-DUooBnyix7opgN6RQ92Ygn",
+            "score": 0.9090909090909091,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S16",
+          "decision": "hold",
+          "reason": "thin-weak-hold",
+          "matchCalls": 1,
+          "score": 0.44999999999999996,
+          "fuzzy": {
+            "score": 0.44999999999999996,
+            "jw": 0.39999999999999997,
+            "lev": 0.4,
+            "tokenSet": 0.44999999999999996
+          },
+          "topMatch": {
+            "id": "NK-Q2FVqiP7y3LjUCnZrpziDA",
+            "score": 0.8666666666666667,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S17",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S18",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 0.9214285714285715,
+          "fuzzy": {
+            "score": 0.9214285714285715,
+            "jw": 0.9214285714285715,
+            "lev": 0.6071428571428572,
+            "tokenSet": 0.6158963585434174
+          },
+          "topMatch": {
+            "id": "NK-PssSiFsMFUHZHipLzpLGtw",
+            "score": 0.8333333333333333,
+            "schema": "Organization"
+          }
+        },
+        {
+          "id": "S19",
+          "decision": "hold",
+          "reason": "thin-elevated-hold",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-UaDjkyrKmcqqkpzKPktBjQ",
+            "score": 0.8,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S20",
+          "decision": "hold",
+          "reason": "score-hold",
+          "matchCalls": 1,
+          "score": 0.7833333333333333,
+          "fuzzy": {
+            "score": 0.7833333333333333,
+            "jw": 0.5928030303030303,
+            "lev": 0.5,
+            "tokenSet": 0.7833333333333333
+          },
+          "topMatch": {
+            "id": "NK-9GtMiA9RJ7bir5m4oLqrEW",
+            "score": 0.8620689655172414,
+            "schema": "Organization"
+          }
+        },
+        {
+          "id": "S21",
+          "decision": "hold",
+          "reason": "score-hold",
+          "matchCalls": 1,
+          "score": 0.7847619047619048,
+          "fuzzy": {
+            "score": 0.7847619047619048,
+            "jw": 0.7825396825396825,
+            "lev": 0.7142857142857143,
+            "tokenSet": 0.7847619047619048
+          },
+          "topMatch": {
+            "id": "NK-UaDjkyrKmcqqkpzKPktBjQ",
+            "score": 0.9090909090909091,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S22",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S23",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S24",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S25",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S26",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S27",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S28",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S29",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S30",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S31",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S32",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S33",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S34",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S35",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S36",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S37",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S38",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S39",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S40",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S41",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-Ygu8FoKwgvzHFUSsn2fV3B",
+            "score": 1,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S42",
+          "decision": "clear",
+          "reason": "score-clear",
+          "matchCalls": 1,
+          "score": 0.6372481684981685,
+          "fuzzy": {
+            "score": 0.6372481684981685,
+            "jw": 0.6372481684981685,
+            "lev": 0.40625,
+            "tokenSet": 0.4864983974358975
+          },
+          "topMatch": {
+            "id": "NK-Ygu8FoKwgvzHFUSsn2fV3B",
+            "score": 0.8,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S43",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-GBCao5kyLFSYhSgrJfvYts",
+            "score": 1,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S44",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 0.7306397306397306,
+            "lev": 0.2727272727272727,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-GBCao5kyLFSYhSgrJfvYts",
+            "score": 1,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S45",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-KCrjZxJAcaTo7cSzjxa4Cz",
+            "score": 1,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S46",
+          "decision": "hold",
+          "reason": "score-hold",
+          "matchCalls": 1,
+          "score": 0.8619047619047618,
+          "fuzzy": {
+            "score": 0.8619047619047618,
+            "jw": 0.8619047619047618,
+            "lev": 0.6428571428571428,
+            "tokenSet": 0.7367724867724867
+          },
+          "topMatch": {
+            "id": "NK-KCrjZxJAcaTo7cSzjxa4Cz",
+            "score": 0.9375,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S47",
+          "decision": "hold",
+          "reason": "score-hold",
+          "matchCalls": 1,
+          "score": 0.8847076461769117,
+          "fuzzy": {
+            "score": 0.8847076461769117,
+            "jw": 0.8847076461769117,
+            "lev": 0.7931034482758621,
+            "tokenSet": 0.757183908045977
+          },
+          "topMatch": {
+            "id": "NK-dBuaFmcKCWCd7FFWgnFvW4",
+            "score": 0.7894736842105263,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S48",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-aBsVPAocpLNWeSf8pvjtoH",
+            "score": 1,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S49",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-o7u2aBckg3ZKmvfrDvgrcn",
+            "score": 1,
+            "schema": "Organization"
+          }
+        },
+        {
+          "id": "S50",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-o7u2aBckg3ZKmvfrDvgrcn",
+            "score": 1,
+            "schema": "Organization"
+          }
+        },
+        {
+          "id": "S51",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 1,
+          "fuzzy": {
+            "score": 1,
+            "jw": 1,
+            "lev": 1,
+            "tokenSet": 1
+          },
+          "topMatch": {
+            "id": "NK-ePvfhq5RuYnxmhF42ertt7",
+            "score": 1,
+            "schema": "Organization"
+          }
+        },
+        {
+          "id": "S52",
+          "decision": "hold",
+          "reason": "thin-elevated-hold",
+          "matchCalls": 1,
+          "score": 0.8337500000000001,
+          "fuzzy": {
+            "score": 0.8337500000000001,
+            "jw": 0.8337500000000001,
+            "lev": 0.46875,
+            "tokenSet": 0.5892361111111111
+          },
+          "topMatch": {
+            "id": "NK-Ygu8FoKwgvzHFUSsn2fV3B",
+            "score": 0.8333333333333334,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S53",
+          "decision": "hold",
+          "reason": "thin-elevated-hold",
+          "matchCalls": 1,
+          "score": 0.6536796536796537,
+          "fuzzy": {
+            "score": 0.6536796536796537,
+            "jw": 0.6536796536796537,
+            "lev": 0.31818181818181823,
+            "tokenSet": 0.41720779220779225
+          },
+          "topMatch": {
+            "id": "NK-GBCao5kyLFSYhSgrJfvYts",
+            "score": 0.7142857142857143,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S54",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S55",
+          "decision": "hit",
+          "reason": "score-hit",
+          "matchCalls": 1,
+          "score": 0.9529411764705882,
+          "fuzzy": {
+            "score": 0.9529411764705882,
+            "jw": 0.9529411764705882,
+            "lev": 0.7647058823529411,
+            "tokenSet": 0.7492458521870287
+          },
+          "topMatch": {
+            "id": "NK-o7u2aBckg3ZKmvfrDvgrcn",
+            "score": 0.9027777777777778,
+            "schema": "Organization"
+          }
+        },
+        {
+          "id": "S56",
+          "decision": "hold",
+          "reason": "thin-weak-hold",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S57",
+          "decision": "hold",
+          "reason": "score-hold",
+          "matchCalls": 1,
+          "score": 0.7561807331628304,
+          "fuzzy": {
+            "score": 0.7561807331628304,
+            "jw": 0.7561807331628304,
+            "lev": 0.7391304347826086,
+            "tokenSet": 0.7114236999147485
+          },
+          "topMatch": {
+            "id": "NK-dBuaFmcKCWCd7FFWgnFvW4",
+            "score": 0.9090909090909091,
+            "schema": "Person"
+          }
+        },
+        {
+          "id": "S58",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S59",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S60",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S61",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S62",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S63",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S64",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S65",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S66",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S67",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S68",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        },
+        {
+          "id": "S69",
+          "decision": "clear",
+          "reason": "weak-clear",
+          "matchCalls": 1,
+          "score": 0,
+          "fuzzy": {
+            "score": 0,
+            "jw": 0,
+            "lev": 0,
+            "tokenSet": 0
+          }
+        }
+      ],
+      "decisionsSha256": "925ec682edccc0dd8aeaaf80d6e2329dc2db8ed34b05dd97c4a297aefa8fcaf4",
+      "rubric": {
+        "outcome": "failed",
+        "gate": "missed-sanction",
+        "why": "2 fatal row(s) posted as clear.",
+        "numbers": {
+          "n": 69,
+          "hitN": 25,
+          "holdN": 14,
+          "clearN": 30,
+          "hitCorrect": 21,
+          "holdCorrect": 9,
+          "clearCorrect": 30,
+          "missedSanction": 2,
+          "falseHit": 0,
+          "hitOnHold": 2,
+          "hitDecisions": 23,
+          "holdDecisions": 11,
+          "residualN": 9,
+          "invalidN": 0,
+          "invalidFatal": 0,
+          "invalidByClass": {},
+          "hitEntityMatch": 21,
+          "hitNoListCall": 0,
+          "hitPrecision": 0.9130434782608695,
+          "manualN": 16,
+          "manualShare": 0.2318840579710145,
+          "manual": {
+            "correctHold": 9,
+            "holdOnHit": 2,
+            "holdOnClear": 0,
+            "falseHit": 0,
+            "hitOnHold": 2,
+            "clearOnHold": 3
+          }
+        },
+        "intervals": {
+          "scope": "this SAMPLE book, not the task class",
+          "missedRate": {
+            "k": 2,
+            "n": 25,
+            "lower": 0,
+            "upper": 0.2310399339581441
+          }
+        },
+        "entity": {
+          "entities": 13,
+          "withHit": 13,
+          "missed": 2,
+          "allHit": 9,
+          "missedEntities": [
+            "NK-np5cQfUWw8tmAJYUiUZFnu",
+            "NK-Ygu8FoKwgvzHFUSsn2fV3B"
+          ]
+        }
+      },
+      "grade": [
+        {
+          "id": "S01",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S02",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S03",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S04",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S05",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S06",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S07",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S08",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S09",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S10",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S11",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S12",
+          "gold": "hit",
+          "decision": "clear",
+          "ok": false,
+          "fatal": true
+        },
+        {
+          "id": "S13",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S14",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S15",
+          "gold": "hold",
+          "decision": "hold",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S16",
+          "gold": "hold",
+          "decision": "hold",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S17",
+          "gold": "hold",
+          "decision": "clear",
+          "ok": false,
+          "fatal": false
+        },
+        {
+          "id": "S18",
+          "gold": "hold",
+          "decision": "hit",
+          "ok": false,
+          "fatal": false
+        },
+        {
+          "id": "S19",
+          "gold": "hold",
+          "decision": "hold",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S20",
+          "gold": "hold",
+          "decision": "hold",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S21",
+          "gold": "hold",
+          "decision": "hold",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S22",
+          "gold": "hold",
+          "decision": "clear",
+          "ok": false,
+          "fatal": false
+        },
+        {
+          "id": "S23",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S24",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S25",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S26",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S27",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S28",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S29",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S30",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S31",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S32",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S33",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S34",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S35",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S36",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S37",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S38",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S39",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S40",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S41",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S42",
+          "gold": "hit",
+          "decision": "clear",
+          "ok": false,
+          "fatal": true
+        },
+        {
+          "id": "S43",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S44",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S45",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S46",
+          "gold": "hit",
+          "decision": "hold",
+          "ok": false,
+          "fatal": false
+        },
+        {
+          "id": "S47",
+          "gold": "hit",
+          "decision": "hold",
+          "ok": false,
+          "fatal": false
+        },
+        {
+          "id": "S48",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S49",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S50",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S51",
+          "gold": "hit",
+          "decision": "hit",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S52",
+          "gold": "hold",
+          "decision": "hold",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S53",
+          "gold": "hold",
+          "decision": "hold",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S54",
+          "gold": "hold",
+          "decision": "clear",
+          "ok": false,
+          "fatal": false
+        },
+        {
+          "id": "S55",
+          "gold": "hold",
+          "decision": "hit",
+          "ok": false,
+          "fatal": false
+        },
+        {
+          "id": "S56",
+          "gold": "hold",
+          "decision": "hold",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S57",
+          "gold": "hold",
+          "decision": "hold",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S58",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S59",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S60",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S61",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S62",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S63",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S64",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S65",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S66",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S67",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S68",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        },
+        {
+          "id": "S69",
+          "gold": "clear",
+          "decision": "clear",
+          "ok": true,
+          "fatal": false
+        }
+      ]
+    }
+  ],
+  "rubric": {
+    "rule": "worst-pass",
+    "pass": 1,
+    "outcome": "failed",
+    "gate": "missed-sanction",
+    "why": "2 fatal row(s) posted as clear.",
+    "numbers": {
+      "n": 69,
+      "hitN": 25,
+      "holdN": 14,
+      "clearN": 30,
+      "hitCorrect": 21,
+      "holdCorrect": 9,
+      "clearCorrect": 30,
+      "missedSanction": 2,
+      "falseHit": 0,
+      "hitOnHold": 2,
+      "hitDecisions": 23,
+      "holdDecisions": 11,
+      "residualN": 9,
+      "invalidN": 0,
+      "invalidFatal": 0,
+      "invalidByClass": {},
+      "hitEntityMatch": 21,
+      "hitNoListCall": 0,
+      "hitPrecision": 0.9130434782608695,
+      "manualN": 16,
+      "manualShare": 0.2318840579710145,
+      "manual": {
+        "correctHold": 9,
+        "holdOnHit": 2,
+        "holdOnClear": 0,
+        "falseHit": 0,
+        "hitOnHold": 2,
+        "clearOnHold": 3
+      }
+    },
+    "intervals": {
+      "scope": "this SAMPLE book, not the task class",
+      "missedRate": {
+        "k": 2,
+        "n": 25,
+        "lower": 0,
+        "upper": 0.2310399339581441,
+        "pass": 1
+      }
+    },
+    "entity": {
+      "entities": 13,
+      "withHit": 13,
+      "missed": 2,
+      "allHit": 9,
+      "missedEntities": [
+        "NK-np5cQfUWw8tmAJYUiUZFnu",
+        "NK-Ygu8FoKwgvzHFUSsn2fV3B"
+      ]
+    },
+    "agreement": 1
+  }
+}

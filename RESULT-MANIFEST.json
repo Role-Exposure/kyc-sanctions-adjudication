@@ -1,0 +1,552 @@
+{
+  "format": "result-manifest",
+  "formatVersion": 1,
+  "commitment": {
+    "ordinal": 2,
+    "sha256": "deab31989bb23435c0a08d3ffd8a41d8d2718d7f211335bd4efe8804a0f7443a"
+  },
+  "receipts": [
+    {
+      "file": "runs/baseline-20261012T191459Z-f4a4e6.json",
+      "sha256": "0884aa1b938957f63683f6443fec4f490c4a141678bb65e75ca58c285bd5cfba"
+    },
+    {
+      "file": "runs/baseline-20261012T193622Z-c3adc2.json",
+      "sha256": "b2217738482ff9c82baa0445aecdffe0f1000e782d9755822bbfdc53ce069349"
+    },
+    {
+      "file": "runs/baseline-20261012T194338Z-ff43bb.json",
+      "sha256": "5330df01786e9b7a59b9c412eab201f59b69f2e77f64d24569212016545dbf44"
+    },
+    {
+      "file": "runs/baseline-20261016T144657Z-62722a.json",
+      "sha256": "804006a74e7abb6c39fe46bbdf16b861517dec51018af73afc8df38358a5183d"
+    },
+    {
+      "file": "runs/model-20261016T145427Z-8a34e7.json",
+      "sha256": "d41e7efbf7ce07567a50816ce794a37004306cc799d14faff37891ec7470768a"
+    },
+    {
+      "file": "runs/model-20261016T152109Z-ae7e77.json",
+      "sha256": "a2878e186a7dfdfdbf594f6a9427b3be1118bce88688b6c71f9da8ed70789657"
+    }
+  ],
+  "attempts": [
+    "public-baseline-1",
+    "public-model-1",
+    "public-model-2"
+  ],
+  "records": [
+    {
+      "date": "2026-10-12T21:36:53Z",
+      "kind": "index-build",
+      "what": "build of the index for the public runs: created 2026-10-12T20:36:41.284Z; /catalog version and index_version 20260909221001-juh, index_current true, index_stale false; 72236 documents; checked at 2026-10-12T21:36:53Z",
+      "phase": "before-completion",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-15T11:48:26Z",
+      "kind": "kit-start",
+      "what": "kit-start --check",
+      "phase": "before-signature",
+      "machine": "other"
+    },
+    {
+      "date": "2026-10-15T11:48:26Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --check result=ok",
+      "phase": "before-signature",
+      "machine": "other"
+    },
+    {
+      "date": "2026-10-15T11:48:26Z",
+      "kind": "kit-start",
+      "what": "kit-start --freeze-check",
+      "phase": "before-signature",
+      "machine": "other"
+    },
+    {
+      "date": "2026-10-15T11:48:26Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --freeze-check result=ok",
+      "phase": "before-signature",
+      "machine": "other"
+    },
+    {
+      "date": "2026-10-16T14:25:21Z",
+      "kind": "other",
+      "what": "start of the stack of the stand after a restart of the machine (04-up: docker compose up -d starts the existing containers from their images and volumes; the index is not rebuilt)",
+      "phase": "before-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:25:21Z",
+      "kind": "index-check",
+      "what": "index-check after the start of the stack following a restart of the machine",
+      "phase": "before-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:25:21Z",
+      "kind": "isolation-check",
+      "what": "isolation-check after the start of the stack following a restart of the machine",
+      "phase": "before-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:29:37Z",
+      "kind": "index-check-result",
+      "what": "index-check result=ok documents=72236 catalog=index_version=20260909221001-juh,index_current=true",
+      "phase": "before-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:29:37Z",
+      "kind": "isolation-check-result",
+      "what": "isolation-check result=confirmed exit=0",
+      "phase": "before-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:40:43Z",
+      "kind": "other",
+      "what": "installation of a package on the machine of the runs, needed by the script of the public model attempt for the entry of the key: package=tmux version=3.6a-2ubuntu0.1 with=libevent-core-2.1-7t64 source=archive.ubuntu.com (the stack, its containers and the kit are not touched)",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:42:06Z",
+      "kind": "re-creation",
+      "what": "re-creation of the two runner containers of the stand (new copy of the kit; the matching server and its index are not touched)",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:42:11Z",
+      "kind": "isolation-check",
+      "what": "isolation-check before the public runs",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:42:32Z",
+      "kind": "isolation-check-result",
+      "what": "isolation-check result=confirmed exit=0",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:42:39Z",
+      "kind": "kit-start",
+      "what": "kit-start --check",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:42:40Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --check result=ok exit=0",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:42:40Z",
+      "kind": "kit-start",
+      "what": "kit-start --freeze-check",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:42:41Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --freeze-check result=ok",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:42:41Z",
+      "kind": "index-check",
+      "what": "index-check before the public runs",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:42:47Z",
+      "kind": "index-check-result",
+      "what": "index-check result=ok index=yente-entities-us_ofac_sdn-016a040902-20260909221001-juh documents=72236 created=2026-10-12T20:36:41.284Z catalog=version=20260909221001-juh,index_version=20260909221001-juh,index_current=true",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:46:46Z",
+      "kind": "kit-start",
+      "what": "kit-start --check",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:46:47Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --check result=ok exit=0",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:46:47Z",
+      "kind": "kit-start",
+      "what": "kit-start --freeze-check",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:46:48Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --freeze-check result=ok",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:46:48Z",
+      "kind": "index-check",
+      "what": "index-check before public baseline attempt 1",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:46:54Z",
+      "kind": "index-check-result",
+      "what": "index-check result=ok index=yente-entities-us_ofac_sdn-016a040902-20260909221001-juh documents=72236 created=2026-10-12T20:36:41.284Z catalog=version=20260909221001-juh,index_version=20260909221001-juh,index_current=true",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:46:55Z",
+      "kind": "kit-start",
+      "what": "kit-start --baseline (public attempt 1, dir public-baseline-1)",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:47:43Z",
+      "kind": "kit-start",
+      "what": "kit-start --rescore baseline-20261016T144657Z-62722a.json",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:47:44Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --rescore baseline-20261016T144657Z-62722a.json result=match exit=0",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:47:45Z",
+      "kind": "receipt-check",
+      "what": "receipt-check leak baseline-20261016T144657Z-62722a.json",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:47:48Z",
+      "kind": "index-check",
+      "what": "index-check after public baseline attempt 1",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:47:54Z",
+      "kind": "index-check-result",
+      "what": "index-check result=ok index=yente-entities-us_ofac_sdn-016a040902-20260909221001-juh documents=72236 created=2026-10-12T20:36:41.284Z catalog=version=20260909221001-juh,index_version=20260909221001-juh,index_current=true",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:47:54Z",
+      "kind": "attempt-result",
+      "what": "attempt public-baseline-1 result runId=baseline-20261016T144657Z-62722a receipt=runs/baseline-20261016T144657Z-62722a.json sha256=804006a74e7abb6c39fe46bbdf16b861517dec51018af73afc8df38358a5183d status=completed exit=5 checksFailed=0 withheld=no",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:51:12Z",
+      "kind": "isolation-check",
+      "what": "isolation-check before public model attempt 1",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:51:33Z",
+      "kind": "isolation-check-result",
+      "what": "isolation-check result=confirmed exit=0",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:51:40Z",
+      "kind": "kit-start",
+      "what": "kit-start --check",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:51:41Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --check result=ok exit=0",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:51:41Z",
+      "kind": "kit-start",
+      "what": "kit-start --freeze-check",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:51:42Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --freeze-check result=ok",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:51:42Z",
+      "kind": "index-check",
+      "what": "index-check before public model attempt 1",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:51:49Z",
+      "kind": "index-check-result",
+      "what": "index-check result=ok index=yente-entities-us_ofac_sdn-016a040902-20260909221001-juh documents=72236 created=2026-10-12T20:36:41.284Z catalog=version=20260909221001-juh,index_version=20260909221001-juh,index_current=true",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:54:25Z",
+      "kind": "kit-start",
+      "what": "kit-start --model (public attempt 1, dir public-model-1)",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:56:54Z",
+      "kind": "kit-start",
+      "what": "kit-start --rescore model-20261016T145427Z-8a34e7.json",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:56:56Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --rescore model-20261016T145427Z-8a34e7.json result=match exit=0",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:56:56Z",
+      "kind": "receipt-check",
+      "what": "receipt-check leak model-20261016T145427Z-8a34e7.json",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:56:58Z",
+      "kind": "index-check",
+      "what": "index-check after public model attempt 1",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:57:03Z",
+      "kind": "index-check-result",
+      "what": "index-check result=ok index=yente-entities-us_ofac_sdn-016a040902-20260909221001-juh documents=72236 created=2026-10-12T20:36:41.284Z catalog=version=20260909221001-juh,index_version=20260909221001-juh,index_current=true",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T14:57:04Z",
+      "kind": "attempt-result",
+      "what": "attempt public-model-1 result runId=model-20261016T145427Z-8a34e7 receipt=runs/model-20261016T145427Z-8a34e7.json sha256=d41e7efbf7ce07567a50816ce794a37004306cc799d14faff37891ec7470768a status=not-completed exit=4 checksFailed=1 withheld=no",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:02:07Z",
+      "kind": "other",
+      "what": "reading of the log of public attempt public-model-1 on the machine of the runs, read only, no request and no run: model-requests=207 failed=207 error=invalid-x-api-key-header (the key entered for the attempt held a character not allowed in an HTTP header, so the HTTP client of the runner refused every request before sending it); the proxy logged no line from the runner container in the window of the attempt, which is why the check proxy-tunnels-present failed; proxy settings of the runner container and the start of the run as on 2026-10-12",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:08:10Z",
+      "kind": "isolation-check",
+      "what": "isolation-check before public model attempt 2",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:08:31Z",
+      "kind": "isolation-check-result",
+      "what": "isolation-check result=confirmed exit=0",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:08:39Z",
+      "kind": "kit-start",
+      "what": "kit-start --check",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:08:40Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --check result=ok exit=0",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:08:40Z",
+      "kind": "kit-start",
+      "what": "kit-start --freeze-check",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:08:41Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --freeze-check result=ok",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:08:41Z",
+      "kind": "index-check",
+      "what": "index-check before public model attempt 2",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:08:47Z",
+      "kind": "index-check-result",
+      "what": "index-check result=ok index=yente-entities-us_ofac_sdn-016a040902-20260909221001-juh documents=72236 created=2026-10-12T20:36:41.284Z catalog=version=20260909221001-juh,index_version=20260909221001-juh,index_current=true",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:18:21Z",
+      "kind": "provider-request",
+      "what": "provider-request GET /v1/models key=yes result=200 (check of the key before public model attempt 2, from the machine of the runs, outside the kit, no row of the book)",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:20:27Z",
+      "kind": "isolation-check",
+      "what": "isolation-check before public model attempt 2",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:20:48Z",
+      "kind": "isolation-check-result",
+      "what": "isolation-check result=confirmed exit=0",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:20:56Z",
+      "kind": "kit-start",
+      "what": "kit-start --check",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:20:57Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --check result=ok exit=0",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:20:57Z",
+      "kind": "kit-start",
+      "what": "kit-start --freeze-check",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:20:58Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --freeze-check result=ok",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:20:58Z",
+      "kind": "index-check",
+      "what": "index-check before public model attempt 2",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:21:04Z",
+      "kind": "index-check-result",
+      "what": "index-check result=ok index=yente-entities-us_ofac_sdn-016a040902-20260909221001-juh documents=72236 created=2026-10-12T20:36:41.284Z catalog=version=20260909221001-juh,index_version=20260909221001-juh,index_current=true",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:21:06Z",
+      "kind": "kit-start",
+      "what": "kit-start --model (public attempt 2, dir public-model-2)",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:35:22Z",
+      "kind": "kit-start",
+      "what": "kit-start --rescore model-20261016T152109Z-ae7e77.json",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:35:24Z",
+      "kind": "kit-start-result",
+      "what": "kit-start --rescore model-20261016T152109Z-ae7e77.json result=match exit=0",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:35:24Z",
+      "kind": "receipt-check",
+      "what": "receipt-check leak model-20261016T152109Z-ae7e77.json",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:35:27Z",
+      "kind": "index-check",
+      "what": "index-check after public model attempt 2",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:35:33Z",
+      "kind": "index-check-result",
+      "what": "index-check result=ok index=yente-entities-us_ofac_sdn-016a040902-20260909221001-juh documents=72236 created=2026-10-12T20:36:41.284Z catalog=version=20260909221001-juh,index_version=20260909221001-juh,index_current=true",
+      "phase": "after-signature",
+      "machine": "stand"
+    },
+    {
+      "date": "2026-10-16T15:35:33Z",
+      "kind": "attempt-result",
+      "what": "attempt public-model-2 result runId=model-20261016T152109Z-ae7e77 receipt=runs/model-20261016T152109Z-ae7e77.json sha256=a2878e186a7dfdfdbf594f6a9427b3be1118bce88688b6c71f9da8ed70789657 status=completed exit=0 checksFailed=0 withheld=no",
+      "phase": "after-signature",
+      "machine": "stand"
+    }
+  ]
+}
